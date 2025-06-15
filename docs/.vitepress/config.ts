@@ -1,8 +1,11 @@
-export default {
+import { defineConfig } from "vitepress";
+
+export default defineConfig({
     base: '/blog/',
     lang: 'zh-CN',
     title: 'Blog',
     description: 'Front-end learning',
+    head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
     markdown: {
         math: true
     },
@@ -63,4 +66,4 @@ export default {
             ]
         }
     }
-}
+});

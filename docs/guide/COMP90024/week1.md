@@ -36,11 +36,9 @@
 > Thus if 95% of the program can be parallelized (1/(1 - 0.95) = 20),  the theoretical maximum speedup using parallel computing would be 20×, no matter how many processors are used, i.e., if the non- parallelisable part takes 1 hour, then no matter how many cores you throw at it, it won’t complete in <1 hour
 > 因此，如果 95% 的程序可以并行化 （1/（1 - 0.95） = 20），那么无论使用多少个处理器，使用并行计算的理论最大加速都将是 20×，即，如果不可并行化的部分需要 1 小时，那么无论你投入多少个内核，它都不会在 <1 小时内完成
 
-# Amdahl's Law
-
-**α** = Fraction of program that can be done in parallel
-**1-α** = Fraction that must be carried out on a single CPU
-**T** = Time needed for the application to execute on a single CPU
+**α** = Fraction of program that can be done in parallel <br/>
+**1-α** = Fraction that must be carried out on a single CPU <br/>
+**T** = Time needed for the application to execute on a single CPU <br/>
 **N** = Number of processors
 
 ---
@@ -59,9 +57,10 @@ $$SpeedUp=Tpar​Tseq​​=(1−α)T+α(T/N)T​=(1−α)+Nα​1​$$
 
 ---
 
-### **Theoretical Maximum SpeedUp**
+### **Theoretical Maximum SpeedUp 理论最大 SpeedUp**
 
 As the number of processors (**N**) gets very large, the term `α/N` approaches 0. This means the total speedup tends towards a limit defined by the serial portion of the code.
+随着处理器 （**N**） 的数量变得非常大，术语“α/N”接近 0。这意味着总加速比趋向于代码的 serial 部分定义的限制。
 
 $$N→∞lim​SpeedUp=1−α1​$$
 
@@ -69,8 +68,9 @@ $$N→∞lim​SpeedUp=1−α1​$$
 
 ### **Example**
 
-Thus, if **95%** of the program can be parallelized (α = 0.95), the theoretical maximum speedup using parallel computing would be:
+Thus, if **95%** of the program can be parallelized ($α = 0.95$), the theoretical maximum speedup using parallel computing would be:
 
 $$1−0.951​=0.051​=20x$$
 
 This means the maximum speedup is **20x**, no matter how many processors are used. For instance, if the non-parallelisable part (5%) takes 1 hour to run, then no matter how many cores you throw at it, the entire program will never complete in less than 1 hour.
+这意味着无论使用多少个处理器，最大加速都是 **20x**。例如，如果不可并行化部分 （5%） 需要 1 小时才能运行，那么无论你投入多少个内核，整个程序都不会在 1 小时内完成。

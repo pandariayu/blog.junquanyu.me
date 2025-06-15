@@ -1,8 +1,6 @@
 ---
-# Home-page configuration for VitePress
-# See https://vitepress.dev/guide/home-page for all available options
 layout: home
-title: JYDocs
+title: Blog
 hero:
   name: Junquan Yu's
   text: Learning Blog
