@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 import timeline from "vitepress-markdown-timeline"; 
 
 export default defineConfig({
-    base: '/when2meet-weapp/',
-    head: [['link', { rel: 'icon', href: '/when2meet-weapp/favicon.ico' }]],
+    base: '/blog/',
+    head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
     markdown: {
         //行号显示
         lineNumbers: true,
