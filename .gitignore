@@ -1,2 +1,2 @@
-./node_modules
-./obsidian
+node_modules
+.obsidian
