@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/filterTime.md",
+                "file": "COMP90024/week1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "filterTime"
+              "title": "week1"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/filterTime.md",
+                "file": "COMP90024/week1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "filterTime 的大纲"
+              "title": "week1 的大纲"
             }
           }
         ],
@@ -168,8 +168,18 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f85324e13ad582be",
+  "active": "aedf99df8cfc3190",
   "lastOpenFiles": [
+    "COMP90024/images/amdahl.png",
+    "COMP90024/images/Pasted image 20250615231554.png",
+    "COMP90024/week1.md",
+    "COMP90024/images/Pasted image 20250615231651.png",
+    "COMP90024/images/Pasted image 20250615231615.png",
+    "COMP90024/images/moore.png",
+    "images.md",
+    "Pasted.md",
+    "().md",
+    "COMP90024/images",
     "backend/groupTimeOverlap.md",
     "database-setup.md",
     "backend/backendNotification.md",
