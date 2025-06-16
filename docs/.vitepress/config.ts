@@ -13,7 +13,7 @@ export default defineConfig({
         logo: "/logo.svg",
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/intro' }
+            { text: 'Note', link: '/guide/intro' }
         ],
         search: {
             provider: 'local'
@@ -61,6 +61,19 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         { text: "Week 1 ", link: "/guide/SWEN90016/week1" },
+                    ],
+                },
+                {
+                    text: 'SWEN90004 Modelling Complex Software Systems',
+                    collapsed: true,
+                    items: [
+                        { text: "Java", link: "/guide/SWEN90004/Java" },
+                        { text: "Finite State Process", link: "/guide/SWEN90004/FSP" },
+                        { text: "Complex System", link: "/guide/SWEN90004/Complex System"},
+                        { text: "Cellar Automata", link: "/guide/SWEN90004/Cellar Automata"},
+                        { text: "Agent-based Modelling", link: "/guide/SWEN90004/Agents based Model"},
+                        { text: "Petri Nets", link: "/guide/SWEN90004/Petri Nets" },
+                        { text: "Practice exam", link: "/guide/SWEN90004/Practice exam part 2" },
                     ],
                 }
             ]

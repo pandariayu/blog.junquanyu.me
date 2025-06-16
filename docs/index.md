@@ -8,7 +8,7 @@ hero:
   nav: 
     - text: 'Home'
       link: '/'
-    - text: 'Guide'
+    - text: 'Note'
       link: '/guide/'
   actions:
     - theme: brand
