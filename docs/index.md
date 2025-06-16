@@ -1,8 +1,8 @@
 ---
 layout: home
-title: Jason Yu
+title: Blog
 hero:
-  name: Jason Yu's
+  name: Junquan Yu's
   text: Learning Blog
   tagline: Bring Bold idea into Actions
   nav: 
