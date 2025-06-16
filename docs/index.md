@@ -1,6 +1,7 @@
 ---
 layout: home
 hero:
+  title: Blog
   name: Jason Yu's
   text: Learning Blog
   tagline: Bring Bold idea into Actions
