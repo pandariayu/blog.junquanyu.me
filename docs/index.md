@@ -12,9 +12,9 @@ hero:
       link: '/guide/'
   actions:
     - theme: brand
-      text: 学习笔记
+      text: Study Note
       link: /guide/intro 
     - theme: alt
-      text: 在Github上查看
+      text: View on Github
       link: https://github.com/yujunquan0127/blog
 ---

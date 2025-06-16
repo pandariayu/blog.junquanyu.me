@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
     base: '/blog/',
-    lang: 'zh-CN',
+    lang: 'en-AU',
     title: 'Blog',
     description: 'Front-end learning',
     head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
