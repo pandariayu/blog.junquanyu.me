@@ -10,20 +10,24 @@ export default defineConfig({
         math: true
     },
     themeConfig: {
-        logo: "/logo.svg",
+        logo: {
+            light: '/logo.svg',
+            dark: '/logo_dark.svg'
+        },
         nav: [
             {
                 text: 'Unimelb Subjects',
                 items: [
-                    { text: 'COMP90024', link: '/subjects/COMP90024/week1' },
-                    { text: 'SWEN90016', link: '/subjects/SWEN90016/week1' },
-                    { text: 'SWEN90004', link: '/subjects/SWEN90004/Java' },
+                    { text: 'COMP90024', link: '/subjects/COMP90024/intro' },
+                    { text: 'SWEN90016', link: '/subjects/SWEN90016/intro' },
+                    { text: 'SWEN90004', link: '/subjects/SWEN90004/intro' },
                 ],
             },
             {
                 text: 'Programming',
                 items: [
                     { text: 'React', link: '/programming/react' },
+                    { text: 'Vue', link: '/programming/vue' },
                     { text: 'Node.js', link: '/programming/nodejs' },
                     { text: 'Python', link: '/programming/python' },
                 ],
@@ -31,8 +35,8 @@ export default defineConfig({
             {
                 text: 'Projects',
                 items: [
-                    { text: 'MUTC Website', link: '/projects/mutc-website' },
-                    { text: 'When2meet WeApp', link: '/projects/when2meet-weapp' },
+                    { text: 'MUTC Website', link: 'https://www.melbunitriathlon.club' },
+                    { text: 'When2meet WeApp', link: 'https://yujunquan0127.github.io/when2meet-weapp/' },
                 ],
             },
             {
@@ -44,7 +48,8 @@ export default defineConfig({
             provider: 'local'
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/yujunquan0127/blog' }
+            { icon: 'github', link: 'https://github.com/yujunquan0127/blog' },
+            { icon: 'linkedin', link: 'https://www.linkedin.com/in/junquan-yu/' },
         ],
         footer: {
             message: "MIT Licensed",
@@ -60,7 +65,7 @@ export default defineConfig({
                 "https://github.com/yujunquan0127/blog/edit/main/docs/:path",
         },
         lastUpdated: {
-            text: "最后更新于",
+            text: "Last Updated",
             formatOptions: {
                 dateStyle: "short",
                 timeStyle: "medium",
@@ -71,7 +76,7 @@ export default defineConfig({
                 {
                     text: 'Introduction',
                     collapsed: true,
-                    link: '/subjects/intro'
+                    link: '/subjects/COMP90024/intro'
                 },
                 {
                     text: 'Week 1 Information Session & How we got here',
@@ -94,14 +99,14 @@ export default defineConfig({
                     text: 'Week 1',
                     collapsed: true,
                     link: '/subjects/SWEN90016/week1'
-                },
-                {
-                    text: 'Week 2',
-                    collapsed: true,
-                    link: '/subjects/SWEN90016/week2'
-                },
+                }
             ],
             '/subjects/SWEN90004': [
+                {
+                    text: 'Introduction',
+                    collapsed: true,
+                    link: '/subjects/SWEN90004/intro'
+                },
                 {
                     text: 'Java',
                     collapsed: true,

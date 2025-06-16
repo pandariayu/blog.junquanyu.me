@@ -3,7 +3,7 @@
 **About Me:**
 
 * 🎓 Currently pursuing a Master of Software Engineering with a focus on Human and Computer Interaction at the University of Melbourne.
-* 💡 Passionate about UI/UX design, front-end development, and creating intuitive, user-centered digital experiences.]
+* 💡 Passionate about UI/UX design, front-end development, and creating intuitive, user-centered digital experiences.
 
 **Skills & Interests:**
 

@@ -5,6 +5,9 @@ hero:
   name: Jason Yu's
   text: Learning Blog
   tagline: Bring Bold idea into Actions
+  image:
+    src: /dolphin.svg
+    alt: VitePress
   actions:
     - theme: brand
       text: About Me
