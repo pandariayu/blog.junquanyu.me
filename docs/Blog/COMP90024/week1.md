@@ -31,11 +31,6 @@
 ## Amdahl's Law
 
 
-
-> [!note]
-> Thus if 95% of the program can be parallelized (1/(1 - 0.95) = 20),  the theoretical maximum speedup using parallel computing would be 20×, no matter how many processors are used, i.e., if the non- parallelisable part takes 1 hour, then no matter how many cores you throw at it, it won’t complete in <1 hour
-> 因此，如果 95% 的程序可以并行化 （1/（1 - 0.95） = 20），那么无论使用多少个处理器，使用并行计算的理论最大加速都将是 20×，即，如果不可并行化的部分需要 1 小时，那么无论你投入多少个内核，它都不会在 <1 小时内完成
-
 **α** = Fraction of program that can be done in parallel <br/>
 **1-α** = Fraction that must be carried out on a single CPU <br/>
 **T** = Time needed for the application to execute on a single CPU <br/>
@@ -74,3 +69,16 @@ $$1−0.951​=0.051​=20x$$
 
 This means the maximum speedup is **20x**, no matter how many processors are used. For instance, if the non-parallelisable part (5%) takes 1 hour to run, then no matter how many cores you throw at it, the entire program will never complete in less than 1 hour.
 这意味着无论使用多少个处理器，最大加速都是 **20x**。例如，如果不可并行化部分 （5%） 需要 1 小时才能运行，那么无论你投入多少个内核，整个程序都不会在 1 小时内完成。
+
+
+## Gustafson-Barsis's Law
+
+> Gives the “scaled speed-up” 提升scaled速率
+
+**α** = Fraction of program that can be done in parallel <br/>
+**1-α** = Fraction that must be carried out on a single CPU <br/>
+**T** = Time needed for the application to execute on a single CPU <br/>
+**N** = Number of processors
+
+Speed up S using N processes is given as a linear formula dependent  on the number of processes and the fraction of time to run sequential  parts. Gustafson's Law proposes that programmers tend to set the  size of problems to use the available equipment to solve problems  within a practical fixed time. Faster (more parallel) equipment  available, larger problems can be solved in the same time. 
+使用 N 个进程加速 S 是一个线性公式，取决于进程数和运行连续部件的时间分数。古斯塔夫森定律 （Gustafson's Law） 提出，程序员倾向于设置问题的大小，以便在实际的固定时间内使用可用的设备来解决问题。更快（更并行）的设备可用，更大的问题可以同时解决。
