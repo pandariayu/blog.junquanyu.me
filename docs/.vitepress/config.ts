@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
     base: '/blog/',
-    lang: 'en-AU',
+    lang: 'en-US',
     title: 'Blog',
     description: 'Front-end learning',
     head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
@@ -11,8 +11,8 @@ export default defineConfig({
     },
     themeConfig: {
         logo: {
-            light: '/logo.svg',
-            dark: '/logo_dark.svg'
+            light: '/blog/logo.svg',
+            dark: '/blog/logo_dark.svg'
         },
         nav: [
             {
