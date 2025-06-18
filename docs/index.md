@@ -1,5 +1,6 @@
 ---
 layout: home
+title: Blog
 hero:
   title: Blog
   name: Jason Yu's

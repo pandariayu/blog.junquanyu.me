@@ -1,18 +1,23 @@
 import { defineConfig } from "vitepress";
+import callout from 'vitepress-plugin-callout'
+import markdownit from 'markdown-it'
 
 export default defineConfig({
     base: '/blog/',
-    lang: 'en-US',
+    lang: 'zh-CN',
     title: 'Blog',
-    description: 'Front-end learning',
+    description: 'JY learning blog',
     head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
     markdown: {
+        config: (md: markdownit) => {
+            md.use(callout)
+        },
         math: true
     },
     themeConfig: {
         logo: {
-            light: '/blog/logo.svg',
-            dark: '/blog/logo_dark.svg'
+            light: '/logo.svg',
+            dark: '/logo_dark.svg'
         },
         nav: [
             {
