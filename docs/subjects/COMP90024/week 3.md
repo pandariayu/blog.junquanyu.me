@@ -11,6 +11,3 @@
 
 ### Relationship with parallel computing laws
 
-Amdahl's Law:
-
-Gustafson's Law: A1中三个文件大小测试的情况下，加速比是否有提升？

@@ -398,7 +398,7 @@ Two (or more) identical processors connected to a single, shared main memory, wi
 
 
 #### Single Program Multiple Data
-![](spmd.png)
+![](./images/spmd.png)
 
 > [!info]
 > - 所有节点执行相同的程序但操作的数据不同
@@ -406,7 +406,7 @@ Two (or more) identical processors connected to a single, shared main memory, wi
 
 #### Data pipelining
 
-![datapiplining](datapipelining.png)
+![datapiplining](./images/datapipelining.png)
 > [!info]
 > 计算任务分解成各个阶段，依次执行
 > 可以接受持续数据据输入，系统功能性更强更复杂，阶段效率影响流水线效率
