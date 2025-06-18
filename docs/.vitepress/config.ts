@@ -39,6 +39,7 @@ export default defineConfig({
                     { text: 'COMP90024', link: '/subjects/COMP90024/intro' },
                     { text: 'SWEN90016', link: '/subjects/SWEN90016/intro' },
                     { text: 'SWEN90004', link: '/subjects/SWEN90004/intro' },
+                    { text: 'SWEN90009', link: '/subjects/SWEN90009/Project Background' },
                 ],
             },
             {
@@ -122,6 +123,53 @@ export default defineConfig({
                     text: 'Week 1',
                     collapsed: true,
                     link: '/subjects/SWEN90016/week1'
+                }
+            ],
+            '/subjects/SWEN90009': [
+                {
+                    text: 'Project Background',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Project Background'
+                },
+                {
+                    text: 'Requirements Elicitation',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Requirement Elicitation'
+                },
+                {
+                    text: 'Early Solution Brainstorming',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Early Solution Brainstorming'
+                },
+                {
+                    text: 'Personas',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Personas'
+                },
+                {
+                    text: 'User Stories',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/User Stories'
+                },
+                {
+                    text: 'Acceptance Criteria',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Acceptance Criteria'
+                },
+                {
+                    text: 'Usability Testing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Usability Testing'
+                },
+                {
+                    text: 'Agile Ceremonies',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Agile Ceremonies'
+                },
+                {
+                    text: 'Interview Preparation',
+                    collapsed: true,
+                    link: '/subjects/SWEN90009/Interview Preparation'
                 }
             ],
             '/subjects/SWEN90004': [

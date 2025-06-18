@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/week 4.md",
+                "file": "subjects/SWEN90009/Agile Ceremonies.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week 4"
+              "title": "Agile Ceremonies"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "subjects/COMP90024/week 4.md",
+                "file": "subjects/SWEN90009/Agile Ceremonies.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "week 4 的大纲"
+              "title": "Agile Ceremonies 的大纲"
             }
           },
           {
@@ -179,10 +179,24 @@
   },
   "active": "90362bf63a032293",
   "lastOpenFiles": [
+    "subjects/SWEN90009/Acceptance Criteria.md",
+    "subjects/SWEN90009/Project Background.md",
+    "subjects/SWEN90009/Agile Ceremonies.md",
+    "subjects/SWEN90009/Early Solution Brainstorming.md",
+    "subjects/SWEN90009/Interview Preparation.md",
+    "subjects/SWEN90009/Personas.md",
+    "subjects/SWEN90009/Requirement Elicitation.md",
+    "subjects/SWEN90009/Usability Testing.md",
+    "subjects/SWEN90009/User Stories.md",
+    "subjects/SWEN90009/Quality Assurance.md",
+    "subjects/SWEN90009/Acceptiance",
+    "subjects/SWEN90009/Interview Preparatino",
+    "subjects/COMP90024/week 4.md",
+    "subjects/SWEN90009",
+    "subjects/未命名.md",
     "subjects/COMP90024/week 3.md",
     "subjects/COMP90024/week 1-2.md",
     "subjects/COMP90024/images/spmd.png",
-    "subjects/COMP90024/week 4.md",
     "subjects/COMP90024/images/Pasted image 20250618215155.png",
     "subjects/COMP90024/images/Pasted image 20250618213419.png",
     "subjects/COMP90024/images/datapipelining.png",
