@@ -2,3 +2,17 @@
 @import "./style/hidden.css";
 @import "./style/vp-code.css";
 @import "./style/home.css";
+
+mark {
+  background-color: #79addd79; /* Light yellow background */
+  color: #283444; /* Dark gray text */
+  padding: 2px 4px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: 500;
+}
+
+/* Dark mode styling for mark elements */
+html.dark mark {
+  color: rgb(239, 243, 252);
+}

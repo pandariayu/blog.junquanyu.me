@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a4fdbd5c4e401166",
@@ -141,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "subjects/COMP90024/week1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "week1 的大纲"
             }
           },
           {
@@ -164,8 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 466.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,7 +177,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "90362bf63a032293",
+  "active": "59df1066692f0182",
   "lastOpenFiles": [
     "test-alerts.md",
     "subjects/COMP90024/week2.md",

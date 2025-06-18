@@ -1,6 +1,8 @@
 import { defineConfig } from "vitepress";
 import callout from 'vitepress-plugin-callout'
 import markdownit from 'markdown-it'
+import container from "markdown-it-container";
+import mark from "markdown-it-mark";
 
 export default defineConfig({
     base: '/blog/',
@@ -9,15 +11,26 @@ export default defineConfig({
     description: 'JY learning blog',
     head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
     markdown: {
-        config: (md: markdownit) => {
-            md.use(callout)
+        config: (md:markdownit) => {
+            md.use(container, "button", {
+                render: (tokens, idx) => {
+                    const token = tokens[idx];
+                    if (token.nesting === 1) {
+                        const color = tokens[idx].info.trim().replace("button ", "");
+                        return `<button class="buttom ${color}">`;
+                    }
+                    return "</button>";
+                },
+            });
+            md.use(callout);
+            md.use(mark);
         },
         math: true
     },
     themeConfig: {
         logo: {
-            light: '/blog/logo.svg',
-            dark: '/blog/logo_dark.svg'
+            light: '/logo.svg',
+            dark: '/logo_dark.svg'
         },
         nav: [
             {
