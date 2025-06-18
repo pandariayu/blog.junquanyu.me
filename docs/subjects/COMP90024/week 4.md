@@ -79,3 +79,16 @@
 > 	- Fine-grained access control <br/>精细访问控制
 > 	- common file access protocols <br/>常见的文件访问协议
 
+## Questions
+
+> [!question|closed] What do you need to obtain from the Melbourne Research Cloud before you can interact with the Melbourne Research Cloud's openStack API? What does this file do?
+> 需要获取openrc.sh文件，文件中包含了与OpenStack交互的重要环境变量和服务端点
+
+> [!question|closed] Describe the interactions that take place with the OpenStack components and their associated APIs to support this scenarios. You may assume that the instance is based on a public image, e.g. NeCTAR Ubuntu-18.04.
+> 1. 结合Open Stack每个component的功能来说
+> 2. 使用KeyStone API 通过用户名密码认证登录
+> 3. 使用Glance获取镜像
+> 4. 使用Nova创建实例并进行基础配置设定
+> 5. 使用Cinder配置100GB数据卷并mount到实例
+> 6. 使用Neutron配置安全组并开放22和80端口
+
