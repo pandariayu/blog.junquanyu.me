@@ -66,7 +66,7 @@ export default defineConfig({
             provider: 'local'
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/yujunquan0127/blog' },
+            { icon: 'github', link: 'https://github.com/yujunquan0127' },
             { icon: 'linkedin', link: 'https://www.linkedin.com/in/junquan-yu/' },
         ],
         footer: {
@@ -97,14 +97,19 @@ export default defineConfig({
                     link: '/subjects/COMP90024/intro'
                 },
                 {
-                    text: 'Week 1 Information Session & How we got here',
+                    text: 'Week 1-2 Information Session & How we got here',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week1'
+                    link: '/subjects/COMP90024/week 1-2'
                 },
                 {
-                    text: 'Week 2 Distributed and Parallel Computing Systems',
+                    text: 'Week 3 HPC & Spartan',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week2'
+                    link: '/subjects/COMP90024/week 3'
+                },
+                {
+                    text: 'Week 4 Cloud Computing, OpenStack & Introducing NeCTAR',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 4'
                 },
             ],
             '/subjects/SWEN90016': [

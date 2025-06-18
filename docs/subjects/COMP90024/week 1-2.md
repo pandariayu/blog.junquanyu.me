@@ -268,7 +268,145 @@ account_dict = {}
 
 ## After processing the data
 
+# 将所有进程的 account_dict 收集到主进程 (root=0) 上
 all_time_dict = comm.gather(time_dict, root=0)
 all_account_dict = comm.gather(account_dict, root=0)
 ```
 
+### Hardware
+
+![hardware](./images/hardware.png)
+
+Cache – much faster than reading/writing to main memory; instruction cache, data cache (multi-  
+level) and translation lookaside buffer used for virtual-physical address translation (more later on  
+Cloud and hypervisors).  
+缓存 – 比==读/写主内存快得多==;指令缓存、数据缓存（多级别）和用于虚拟物理地址转换的转换后备缓冲区（稍后将详细介绍云和虚拟机管理程序）。 
+
+Parallelisation by adding extra CPU to allow more instructions to be processed per cycle. Usually  
+shares arithmetic units. Heavy use of one type of computation can tie up all the available units of  
+the CPU preventing other threads from using them.
+通过添加额外的 CPU 来允许每个周期处理更多指令的并行化。==通常分享算术单位==。大量使用一种类型的计算可能会占用所有可用的单位CPU ==阻止其他线程使用它们==。
+
+Multiple cores that can process data and ( in principle!!!) perform computational tasks in parallel. Typically share same cache, but issue of cache read/write performance and cache coherence. Possibility of cache stalls (CPU not doing anything whilst waiting for caching); many chips have mixture (L1 cache on single cores; L2 cache on pairs of cores; L3 cache shared by all cores); typical to have different cache speeds and cache sizes (higher hit rates but potentially higher latency). 
+ 可以处理数据和（原则上!!）并行执行计算任务的多个内核。==通常共享相同的缓存==，但存在缓存读/写性能和缓存一致性问题。缓存停顿的可能性（CPU 在等待缓存时不做任何事情）;许多芯片具有混合 （单核上的 L1 缓存;成对内核上的 L2 缓存;所有内核共享的 L3 缓存）;==通常具有不同的缓存速度和缓存大小==（命中率更高，但延迟可能更高）。 
+
+Two (or more) identical processors connected to a single, shared main memory, with full access to all I/O devices, controlled by a single OS instance that treats all processors equally. Each processor executes different programs and works on different data but with capability of sharing common resources (memory, I/O device, ...). Processors can be connected in a variety of ways: buses, crossbar switches, meshes. More complex to program since need to program both for CPU and inter-processor communication (bus).
+两个（或多个）相同的处理器连接到一个共享的主内存，具有对所有 I/O 设备的完全访问权限，由一个平等对待所有处理器的作系统实例控制。每个处理器执行不同的程序并处理不同的数据，但具有==共享公共资源（内存、I/O 设备等）的能力==。处理器可以通过多种方式连接：总线、交叉开关、网格。编程更复杂，因为需要同时为 CPU 和处理器间通信（总线）编程。
+
+### Operating System Parallelism Approaches
+
+- Most modern multi-core operating systems support different forms of parrallelism
+	- parallel or interleaved semantics
+	  A || B or A ||| B
+- Compute parallelism
+	- processes - uses to realise tasks, structure activities, 用于实现任务、构建活动......
+	- Threads 
+		- Native threads
+			- Fork, spawn, join
+		- Green threads
+			- Scheduled a virtual machine instead of natively by the OS
+			  计划虚拟机，而不是由 OS 本机计划
+-  Data parallelism
+	-  Caching
+	- **OS implies "a" computer**
+
+### Software Parallelism Approaches
+
+- 很多语言现在支持一大部分的平行/并行特点
+	- e.g. Threads thread pool ...
+- 有可能出现的问题
+	- Deadlock
+	  process involved constantly for each other
+	  不断相互参与的过程
+	- livelock
+	  constantly change with regard to one another, but none are progressing
+	  彼此之间不断变化，但没有一个进步
+
+- Challenge of big data
+	- Consistency, Availabilities, Partition tolerance 一致性、可用性、分区容错能力
+	- e.g. ElasticSearch
+
+## Distributed System and Parallel Computing
+
+### The Assumption of Distributed Systems
+
+> [!question] The network is reliable?
+> - 数据无法确认是否已发送
+> - 数据无法确认是否是按顺序发送
+> - 网络栈中底层级无法保证能够避免以上问题
+
+> [!question] Latency is zero?
+> - 如果我发一条消息，那他会马上到达对方那里吗？
+> - 距离， 物理限制
+> - 可以用route (traceroute) 查看
+> - In a system with many nodes/hops each link can have different latencies
+> - 在具有许多节点/跃点的系统中，每个链路可以具有不同的延迟
+> 	- Next hop behaviour can be challenging 下一跃点行为可能具有挑战性
+> 	- Explored in active networking technologies, software defined networking,...
+> 	    在主动网络技术、软件定义网络中进行了探讨,...
+
+> [!question] Bandwidth is infinite?
+> - 我可以在节点之间发任意数量的数据？
+> - 网络容量是提前仔细规划好的
+
+> [!question] The network is secure?
+> - 有些人一直在试密码，SQL攻击
+> - 会有人一直攻击我
+> - 中间人攻击
+> - 有人黑进了我的其中一个节点 e.g. 暴力攻击，病毒
+> - 有人偷了我的硬件设施
+
+> [!question] Topology doesn't change?
+> - 路由变换
+> - 延迟的变化
+> - 连接中断？
+
+> [!question] There is one administrator
+> - 权限管理
+> - 防火墙变化
+> - 责任判定
+
+> [!question] Transport cost is not zero
+> - 数据传输需要硬件支持， 花钱买aws ec2
+
+> [!question] The network is not homogenous
+> - 设备类型差异
+> - 协议差异
+> - 网络性能差异
+
+> [!question] Time is not ubiquitous
+> - 时钟同步现需要依赖网络延迟，精度有差异
+
+### Partitioning model
+
+#### Master/slave
+![master/slave](./images/masterslave.png)
+
+> [!info] 
+> - Pros
+> 	- 主节点只负责分解任务和结果汇总
+> 	- 易于实现管理，任务调度和监控方便
+> - Cons
+> 	- 主节点存在性能瓶颈和单点故障的问题
+
+#### Divide and Conquer
+
+![taskdecomposition](./images/taskdecomposition.png)
+> [!info] 
+> - 将任务分解为独立且结构相同的子问题进行求解，再合并问题
+> - 侧重算法设计和问题分解的策略方向
+
+
+#### Single Program Multiple Data
+![](spmd.png)
+
+> [!info]
+> - 所有节点执行相同的程序但操作的数据不同
+> - 编程简单，不需要任务分配，各单元独立无依赖
+
+#### Data pipelining
+
+![datapiplining](datapipelining.png)
+> [!info]
+> 计算任务分解成各个阶段，依次执行
+> 可以接受持续数据据输入，系统功能性更强更复杂，阶段效率影响流水线效率
