@@ -5,11 +5,10 @@ import container from "markdown-it-container";
 import mark from "markdown-it-mark";
 
 export default defineConfig({
-    base: '/blog/',
     lang: 'zh-CN',
     title: 'Blog',
     description: 'JY learning blog',
-    head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
+    head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     markdown: {
         config: (md:markdownit) => {
             md.use(container, "button", {

@@ -30,7 +30,6 @@
 > - Cluster Computing: 往HPC上去靠 A collection of closely connected computers strapped together with a highspeed local network as a single system to provide high performance computing
 > - Cloud Computing: 往五个特点上去靠 Model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources
 
-
 > [!question|closed] Describe some of the current challenges with large-scale distributed systems
 > 开放性很强的问题，可以从任何角度来论证，需要注意不要罗列名词，要有对应解释
 > Heterogeneity: 异构型问题的挑战
