@@ -116,7 +116,9 @@ Cloud computing并非一日发展而来的 科技日益进步 需求在持续增
 ### Moore's Law
 
 The number of transistors in an IC doubles about every two years.
-**整体趋势: 性能提升，成本下降**
+> [!info] 
+>整体趋势: 性能提升，成本下降
+
 ## Parallel Computing
 
 ### Terminology

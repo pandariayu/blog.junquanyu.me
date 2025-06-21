@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/week 1-2.md",
+                "file": "subjects/COMP90024/week 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week 1-2"
+              "title": "week 5"
             }
           }
         ]
@@ -180,10 +180,14 @@
   },
   "active": "90362bf63a032293",
   "lastOpenFiles": [
+    "subjects/COMP90024/week 4.md",
+    "subjects/COMP90024/week 5.md",
+    "test-mcq.md",
+    "subjects/COMP90024/week 6.md",
+    "subjects/COMP90024/images/Pasted image 20250620212653.png",
+    "subjects/COMP90024/week 1-2.md",
     "subjects/COMP90024/week 3.md",
     "subjects/COMP90024/images/Pasted image 20250619215410.png",
-    "subjects/COMP90024/week 1-2.md",
-    "subjects/COMP90024/week 4.md",
     "subjects/SWEN90009/Agile Ceremonies.md",
     "subjects/SWEN90009/Acceptance Criteria.md",
     "subjects/SWEN90009/Project Background.md",
@@ -208,7 +212,6 @@
     "subjects/COMP90024/images/hardware.png",
     "test-alerts.md",
     "subjects/intro.md",
-    "public/logo_dark.svg",
     "programming/nodejs/index.md",
     "programming/python/index.md",
     "programming/react/index.md",
@@ -221,8 +224,6 @@
     "projects/mutc-website",
     "subjects/SWEN90016/week1.md",
     "subjects/COMP90024/index.md",
-    "subjects/index.md",
-    "about/index.md",
     "about",
     "About"
   ]
