@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/week 6.md",
+                "file": "subjects/COMP90024/week 8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week 6"
+              "title": "week 8"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "subjects/COMP90024/week 6.md",
+                "file": "subjects/COMP90024/week 8.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "week 6 的大纲"
+              "title": "week 8 的大纲"
             }
           },
           {
@@ -179,10 +179,14 @@
   },
   "active": "90362bf63a032293",
   "lastOpenFiles": [
+    "subjects/COMP90024/images/Pasted image 20250621214352.png",
+    "subjects/COMP90024/images/Pasted image 20250621212704.png",
+    "subjects/COMP90024/images/Pasted image 20250621212314.png",
+    "subjects/COMP90024/week 7.md",
+    "subjects/COMP90024/week 8.md",
+    "subjects/COMP90024/week 6.md",
     "subjects/COMP90024/images/Pasted image 20250621200958.png",
     "subjects/COMP90024/images/Pasted image 20250621200906.png",
-    "subjects/COMP90024/week 7.md",
-    "subjects/COMP90024/week 6.md",
     "subjects/COMP90024/images/Pasted image 20250621192850.png",
     "subjects/COMP90024/images/Pasted image 20250621191728.png",
     "subjects/COMP90024/images/Pasted image 20250621191400.png",
@@ -194,7 +198,6 @@
     "subjects/COMP90024/images/Pasted image 20250620212653.png",
     "subjects/COMP90024/week 1-2.md",
     "subjects/COMP90024/week 3.md",
-    "subjects/COMP90024/images/Pasted image 20250619215410.png",
     "subjects/SWEN90009/Agile Ceremonies.md",
     "subjects/SWEN90009/Acceptance Criteria.md",
     "subjects/SWEN90009/Project Background.md",
@@ -209,8 +212,6 @@
     "subjects/SWEN90009/Interview Preparatino",
     "subjects/SWEN90009",
     "subjects/未命名.md",
-    "subjects/COMP90024/images/spmd.png",
-    "subjects/COMP90024/images/Pasted image 20250618215155.png",
     "test-alerts.md",
     "subjects/intro.md",
     "programming/nodejs/index.md",
@@ -221,7 +222,6 @@
     "programming/python",
     "programming/vue",
     "programming/react",
-    "projects/mutc-website/index.md",
     "projects/mutc-website",
     "about",
     "About"

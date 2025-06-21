@@ -182,13 +182,6 @@ Pod 是k8s调度的最小单位，有自身的生命周期，同时也是k8s最�
 - **仓库 (Repositories):** Charts 通常从 Helm **仓库**下载 。
 - **定制化:** Helm charts 是可定制的。可以通过命令行设置参数，或提供一个自定义的值 (values) YAML 文件 。
 
-## Exam Questions
-
-> [!question|closed] 在Kubernetes架构中，以下关于各项组件功能及相互关系的描述，正确的是()
-> 1. Pod是部署的最小单元，每个Pod只能包含一个容器，且容器间无法共享资源
-> 2. Service直接将请求转发到具体的Node上，不涉及Pod
-> 3. Ingress可以独立工作，不需要依赖Service就能将请求转发到后端应用
-> 4. Namespace 可以在逻辑上隔离和组织资源，不同Namespace中的资源名称可以相同
 
 ## ReST & Web service
 
@@ -260,7 +253,8 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
 
 ### HTTP methods
 
-> [!note] 安全的方法自然幂等
+> [!note] 
+> 安全的方法自然幂等
 
 - **安全方法 (Safe Methods):** 这些方法不会改变服务器上资源的状态。重复一个安全的调用没有任何效果 
     - `GET`、`HEAD`、`OPTIONS` 是安全的 。
@@ -268,4 +262,105 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
     - `PUT` 和 `DELETE` 是幂等的 。例如，运行 `DELETE /users/123` 两次与运行一次的结果相同（用户被删除）。
 - **两者皆非:** 既不安全也不幂等的方法。
     - `POST` 两者皆非。调用 `POST /users` 两次会创建两个不同的用户 。
+
+## Exam Questions
+
+> [!question|closed] 在Kubernetes架构中，以下关于各项组件功能及相互关系的描述，正确的是()
+> 1. Pod是部署的最小单元，每个Pod只能包含一个容器，且容器间无法共享资源
+> 2. Service直接将请求转发到具体的Node上，不涉及Pod
+> 3. Ingress可以独立工作，不需要依赖Service就能将请求转发到后端应用
+> 4. Namespace 可以在逻辑上隔离和组织资源，不同Namespace中的资源名称可以相同
+
+> [!question|closed] Describe the term - based IaaS, PaaS, andSaaS and give examples for each
+> - offer basic infrastructure resources, users have to deploy the system themselves, e.g. AWS
+> - offer develop and running platforms to users, they have to develop the application, google app engine
+> - offer the whole software, users can use it without any technically deployment or sth
+
+> [!question|closed] What are the advantages/disadvantages of public, private and hybrid clouds?
+> 公有云注重性价比和使用门槛 存在按钮全风险定制化程度低
+> 私有云注重系统可控性 构建成本更高 资源利用率更低
+> hybrid在两者间平衡 带来更多的兼容性问题和更高的架构复杂性
+
+> [!question|closed] Describe some of the challenges in delivering hybrid clouds?
+> 多谈论跨平台跨组织跨网格带来的可能问题
+
+> [!question|closed] Discuss the major trends in research and research computing over the last 20 years that have led to the emergence of Cloud computing.  
+> 可从 big data challenge、计算资源需求增长、异构性增加、弹性扩展能力提升、技术门槛降低、on demand 服务和 elasticity 需求等方面说明
+
+> [!question|closed] How has the evolution of service-oriented architectures supported Cloud computing?  
+> 各模块独立封装，解耦，向外部提供服务，并提供统一的接口标准，使得云计算可以简单快速的扩展和升级，利于 scaling
+
+> [!question|closed] A HTTP method can be idempotent.  
+> a. What is meant by this italicized term?  
+> b. Give an example of an idempotent ReST method.  
+> c. 多次执行该操作，结果不变  
+> d. GET、PUT 等
+
+> [!question|closed] Explain the general principles that should underlie the design of Service-Oriented Architecture (SOA).  
+> 架构松耦合、功能封装、模块化、复用、标准化接口、兼容性、服务发现、适应动态环境
+
+> [!question|closed] Explain why and how Cloud infrastructures have benefited from SOA.  
+> 云计算强调去耦构性、弹性伸缩、需求动态变化和标准化理念，SOA 提供理论支持和实践依赖，加速云计算发展
+
+> [!question|closed] SOAP is dead; ReST is the future! Explain this statement with regards to Representational State Transfer (ReST) based web services compared to Simple Object Access Protocol (SOAP)-based web services for implementing service-oriented architectures.  
+> ReST 更加轻量化，依赖简单的协议，提升了服务开发和服务提供效率，资源利用率高，易于扩展；SOAP 更加复杂，依赖繁琐协议，效率低
+
+> [!question|closed] HTTP methods can be safe or idempotent.  
+> a. What is meant by a safe HTTP method?  
+> b. Give an example of a safe HTTP method.  
+> c. What is meant by an idempotent HTTP method?  
+> d. Give an example of an idempotent HTTP method.  
+> e. Give an example of a HTTP method that is neither safe nor idempotent.  
+> a. 不会改变服务器状态的操作  
+> b. GET  
+> c. 多次执行结果不变  
+> d. PUT  
+> e. POST
+
+> [!question|closed] Give a short explanation for the following terms that are often used in a code versioning context:
+> 
+> 1. Commit
+>     
+> 2. Checkout
+>     
+> 3. Branch
+>     
+> 4. Tag
+>     
+> 5. Rebase
+>     
+> 6. commit：提交更改到版本库
+>     
+> 7. checkout：切换分支或版本
+>     
+> 8. branch：代码分支，独立开发线
+>     
+> 9. tag：对特定提交打标签
+>     
+> 10. rebase：变基，将一组提交移到另一分支之上
+>     
+
+> [!question|closed] What is the main difference between the clone and checkout commands?  
+> clone 涉及与远端 repo 的交互，是本地 repo 的初始化；checkout 只在本地 repo 的不同 branch 之间切换
+
+> [!question|closed] What are container orchestration technologies? What are the main benefits of using container orchestration tools? Name two of the most popular Docker orchestration tools.  
+> 容器编排技术用于自动化部署、管理、扩展和网络连接多个容器。主要好处有提升效率、自动化运维、弹性伸缩。常见工具有 Kubernetes 和 Docker Swarm
+
+> [!question|closed] A researcher wants to attach to an already running Postgresql container and list all of the databases it contains. The command to list all of the database is psql -U postgres -c “\l”. The name of the container is postgres and it exposes the port 5432 to the host. Is the following command correct? If not, please correct it: docker exec -p 5432 --name postgres sh -c psql -U postgres -c “\l”  
+> 主要问题是 docker exec 不需要 -p 5432 和 --name，正确命令：docker exec postgres sh -c "psql -U postgres -c '\l'"
+
+> [!question|closed] What is the main difference between a container and a virtual machine?  
+> 主要区别在于操作系统层面，容器共享宿主内核，虚拟机包含独立操作系统
+
+> [!question|closed] What is the main difference between Docker Compose and Docker SWARM?  
+> Compose 用于单机多容器，Swarm 用于多主机集群管理
+
+> [!question|closed] What is the main difference between a volume mount and a bind mount?  
+> volume 存储于专属路径，bind mount 为文件目录映射
+
+> [!question|closed] What do the following Docker commands do?  
+> docker service create --replicas 2 --name nginx nginx  
+> docker service update --image=nginx:alpine nginx  
+> 前者为 swarm 服务创建，其中一个是创建副本，另一个为镜像升级
+
 
