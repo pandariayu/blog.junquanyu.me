@@ -111,6 +111,16 @@ export default defineConfig({
                     collapsed: true,
                     link: '/subjects/COMP90024/week 4'
                 },
+                {
+                    text: 'Week 5 Containerization and Docker & CI/CD',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 5'
+                },
+                {
+                    text: 'Week 6 Kubernetes & ReST',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 6'
+                }
             ],
             '/subjects/SWEN90016': [
                 {
