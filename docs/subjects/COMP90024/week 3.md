@@ -23,38 +23,6 @@
 5. `my-job-stats -j <job_id> -a`  查询特定作业的统计信息（通常是作业完成后）
 ## Exam questions
 
-> [!question|closed] Explain what is meant by the terms **Grid computing, Cluster Computing and Cloud Computing**
-> - Grid Computing: Distributed architecture where multiple independent, geographically separated computers work together to perform large-scale tasks by sharing resources over a network
-> - Cluster Computing: 往HPC上去靠 A collection of closely connected computers strapped together with a highspeed local network as a single system to provide high performance computing
-> - Cloud Computing: 往五个特点上去靠 Model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources
-
-> [!question|closed] Describe some of the current challenges with large-scale distributed systems
-> 开放性很强的问题，可以从任何角度来论证，需要注意不要罗列名词，要有对应解释
-> Heterogeneity: 异构型问题的挑战
-> Shared resource: 可以讨论资源异构问题 也可以从CAP理论讨论并发控制
-> Scalability: 结合异构型问题讨论 以及后面讲过的自动化部署 虚拟化概念
-> Big data challenge: 从4个V讨论数据处理需求
-
-> [!question|closed] Cloud computing solves some of these issues but not all. *Explain*
-> 哪些解决了哪些没有解决？最好举出例子
-> 可以从理论说 可以从实际说 还可以利用A1和A2里遇到的场景佐证 例如服务器的部署等等
-
-> [!question|closed] Describe some of the erroneous assumptions that are often made in designing large-scale distributed system
-> 根据前面分布式系统的挑战章节回答
-
-> [!question|closed] Define Gustafson-Barsis’ law for scaled speed-up of parallel programs.
-> 直接给出每个变量的定义 并写出公式+一句话解释
-
-> [!question|closed] A parallel program takes 128 seconds to run on 32 processors. The total time spent in the sequential part of the program is 12 seconds. What is the scaled speedup?
-> alpha = $(128-12) /128 116/128$ <br/>
-> Scaled speed up = $(1-alpha)+alpha \cdot N$ <br/>
-> $= (1-116/128)+116/128\cdot32$ <br/>
-> $= -0.9+29$ <br/>
-> Scaled speed up = -29.9
-
-> [!question|closed] Discuss the major trends in research and research computing over the last 20 years that have led to the emergence of Cloud computing
-> 根据前面讲的Distributed System到Grid Computing到Cloud Computing的演变讲 每个阶段的目标是什么 新的技术解决了什么困难或问题 带来了什么新的挑战
-
 ![](./images/Pasted%20image%2020250619215410.png)
 
 > [!question|closed] Explain the role of a job scheduler on a high-performance computing system like the University of Melbourne SPARTAN compute cluster. What commands can be used to influence the behavior of the job scheduler in supporting parallel jobs running on multiple nodes (servers)?

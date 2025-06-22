@@ -7,7 +7,7 @@
 - Many advantages of virtualization, such as application containment and horizontal scalability, come at a cost: resources. The guest OS and binaries can give rise to duplications between VMs wasting server resources, memory and disk space and limiting the number of VMs each server can support.  
   虚拟化的许多优势（例如应用程序控制和水平可扩展性）都是==以资源为代价的==。single host OS和二进制文件可能会导致 VM 之间的重复，从而浪费服务器资源、内存和磁盘空间，并限制每个服务器可以支持的 VM 数量。 
 - Containerization allows instances (i.e. containers) to share a single host OS (and associated drivers, binaries, and libraries) to reduce wasted resources since each container only holds the  application and its related binaries
-  容器化允许instances (i.e. containers)共享单个single host OS（以及相关的驱动程序、二进制文件和库），以减少资源浪费，因为每个容器只保存应用程序及其相关二进制文件
+  ==容器化允许instances (i.e. containers)共享单个single host OS（以及相关的驱动程序、二进制文件和库）==，以减少资源浪费，因为每个容器只保存应用程序及其相关二进制文件
 
 ### Virtual Machines vs Containers
 ![](./images/Pasted%20image%2020250620212653.png)
@@ -50,7 +50,7 @@ Container orchestration technologies feature
 - Health check and self-healing  
 - Security  
 - Rolling updates  
-- 
+
 Goals:  
 - Simplify container management processes  简化容器管理流程
 - Help to manage availability and scaling of containers 帮助管理容器的可用性和扩展

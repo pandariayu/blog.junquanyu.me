@@ -54,7 +54,7 @@ Infrastructure as Code (IaC) is the practice of using code (mostly configuration
 
 - Docker Compose allows to define and manage a set of containers that run on the same compute node and cooperate to deliver a functionality (in Kubernetes this is called a “Pod”)  Docker Compose 允许定义和管理一组运行在同一计算节点上的容器，并协作提供功能（在 Kubernetes 中称为“Pod”）
 - An example of a Docker Compose stack: an Nginx container, a WordPress container, and a MySQL container that are linked together to deliver a complete WordPress deployment (as per workshop)  
-  Docker Compose 堆栈的示例：一个 Nginx 容器、一个 WordPress 容器和一个 MySQL 容器，它们链接在一起以提供完整的 WordPress 部署（根据研讨会）
+  Docker Compose 堆栈的示例：一个 Nginx 容器、一个 WordPress 容器和一个 MySQL 容器，它们链接在一起以提供完整的 WordPress 部署
 - Docker Swarm extends this capability to a set of compute nodes  
   Docker Swarm 将此功能扩展到一组计算节点
 - Kubernetes and Docker Swarm have the same core functionality (managing  containers on a set of compute nodes), but Docker Swarm does not do much beside this, whilst Kubernetes adds powerful abstractions and tools to build complex systems
@@ -189,7 +189,7 @@ Pod 是k8s调度的最小单位，有自身的生命周期，同时也是k8s最�
 
 - **问题:** 当软件组件分布在不同的机器上时，它们无法像在同一台机器上那样通过直接的方法（如简单的函数调用）进行通信 。
 - **解决方案:** 组件必须以更“松散耦合”的方式进行交互 。**服务 (Services)** 通常用于此目的 。
-- **定义:** 面向服务的架构 (SoA) 是一种架构模式，其中应用程序组件通过通信协议（通常是通过网络）向其他组件提供服务 。
+- **定义:** 面向服务的架构 (SoA) 是一种架构模式，其中==应用程序组件通过通信协议（通常是通过网络）向其他组件提供服务 。==
 
 ### SoA & Web Service
 

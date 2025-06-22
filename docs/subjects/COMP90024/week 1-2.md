@@ -1,4 +1,4 @@
-# Information Session & How we got here
+# Distributed and Parallel Computing Systems
 
 ## Cloud Computing
 
@@ -7,7 +7,7 @@
 1. What: Different types of computing resources
 2. How: Through network
 3. Why: On-demand (Lower cost & better  utilization)
-4. Cloud computing is a technology to utilize heterogeneous computing resource through network and provide on-demand service
+4. Cloud computing is a technology to ==utilize heterogeneous computing resource through network== and provide on-demand service
 ### Characteristics
 
 #### On-demand self-service
@@ -17,6 +17,7 @@ A consumer can provision computing capabilities as needed without requiring huma
 #### Network access
 
 Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous client platforms.
+
 功能可通过网络获得，并通过促进异构客户端平台使用的标准机制进行访问。
 #### Resource pooling
 
@@ -39,7 +40,7 @@ Cloud systems automatically control and optimize resource use by leveraging a me
 >- 网络的优势:  打破物理边界/统一管理快速调配
 
 > [!question|closed] 什么是Pooling? Pooling有什么好处?
->- 由于处理任务类型不同 打破传统资源界限，抽象为更小的单位进行组合调配
+>- 由于处理任务类型不同 打破传统资源界限，抽象为==更小的单位==进行组合调配
 >- Resource pooling的好处:   On-demand/利用率高/成本低/服务提供商统一维护/技术门槛低
 
 > [!question|closed] Cloud computing 支持Elasticity是否是必要的？举出几个例子
@@ -128,8 +129,9 @@ $$T(1) = \text{speed up}= T(1)/T(N)$$
 
 ### Amdahl's Law
 
+$$1/(1-\alpha)$$
 
-$\alpha$ = Fraction of program that can be done in parallel <br/>
+$\alpha$ = Fraction of program that **can be done in parallel** <br/>
 $1-\alpha$= Fraction that must be carried out on a single CPU <br/>
 $T$ = Time needed for the application to execute on a single CPU <br/>
 $N$ = Number of processors
@@ -169,6 +171,8 @@ This means the maximum speedup is **20x**, no matter how many processors are use
 
 > [!info] 
 >可以通过增大问题规模和处理器个数，达到任意加速比
+
+$$$$
 
 $\alpha$ = Fraction of program that can be done in parallel <br/>
 $1-\alpha$ = Fraction that must be carried out on a single CPU <br/>
@@ -411,3 +415,38 @@ Two (or more) identical processors connected to a single, shared main memory, wi
 > [!info]
 > 计算任务分解成各个阶段，依次执行
 > 可以接受持续数据据输入，系统功能性更强更复杂，阶段效率影响流水线效率
+
+## Exam questions
+
+
+> [!question|closed] Explain what is meant by the terms **Grid computing, Cluster Computing and Cloud Computing**
+> - Grid Computing: Distributed architecture where multiple independent, geographically separated computers work together to perform large-scale tasks by sharing resources over a network
+> - Cluster Computing: 往HPC上去靠 A collection of closely connected computers strapped together with a highspeed local network as a single system to provide high performance computing
+> - Cloud Computing: 往五个特点上去靠 Model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources
+
+> [!question|closed] Describe some of the current challenges with large-scale distributed systems
+> 开放性很强的问题，可以从任何角度来论证，需要注意不要罗列名词，要有对应解释
+> Heterogeneity: 异构型问题的挑战
+> Shared resource: 可以讨论资源异构问题 也可以从CAP理论讨论并发控制
+> Scalability: 结合异构型问题讨论 以及后面讲过的自动化部署 虚拟化概念
+> Big data challenge: 从4个V讨论数据处理需求
+
+> [!question|closed] Cloud computing solves some of these issues but not all. *Explain*
+> 哪些解决了哪些没有解决？最好举出例子
+> 可以从理论说 可以从实际说 还可以利用A1和A2里遇到的场景佐证 例如服务器的部署等等
+
+> [!question|closed] Describe some of the erroneous assumptions that are often made in designing large-scale distributed system
+> 根据前面分布式系统的挑战章节回答
+
+> [!question|closed] Define Gustafson-Barsis’ law for scaled speed-up of parallel programs.
+> 直接给出每个变量的定义 并写出公式+一句话解释
+
+> [!question|closed] A parallel program takes 128 seconds to run on 32 processors. The total time spent in the sequential part of the program is 12 seconds. What is the scaled speedup?
+> alpha = $(128-12) /128 116/128$ <br/>
+> Scaled speed up = $(1-alpha)+alpha \cdot N$ <br/>
+> $= (1-116/128)+116/128\cdot32$ <br/>
+> $= -0.9+29$ <br/>
+> Scaled speed up = -29.9
+
+> [!question|closed] Discuss the major trends in research and research computing over the last 20 years that have led to the emergence of Cloud computing
+> 根据前面讲的Distributed System到Grid Computing到Cloud Computing的演变讲 每个阶段的目标是什么 新的技术解决了什么困难或问题 带来了什么新的挑战
