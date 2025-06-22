@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/week 10.md",
+                "file": "subjects/COMP90024/week 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week 10"
+              "title": "week 9"
             }
           }
         ]
@@ -180,15 +180,18 @@
   },
   "active": "90362bf63a032293",
   "lastOpenFiles": [
-    "subjects/COMP90024/week 9.md",
     "subjects/COMP90024/week 8.md",
-    "subjects/COMP90024/week 7.md",
-    "subjects/COMP90024/week 6.md",
-    "subjects/COMP90024/week 5.md",
     "subjects/COMP90024/week 4.md",
-    "subjects/COMP90024/week 1-2.md",
-    "subjects/COMP90024/week 3.md",
+    "subjects/COMP90024/week 9.md",
+    "subjects/COMP90024/week 7.md",
+    "subjects/COMP90024/week 5.md",
+    "subjects/COMP90024/week 6.md",
     "subjects/COMP90024/week 10.md",
+    "subjects/COMP90024/images/Pasted image 20250622173024.png",
+    "subjects/COMP90024/images/Pasted image 20250622173015.png",
+    "subjects/COMP90024/week 1-2.md",
+    "subjects/COMP90024/images/Pasted image 20250622152656.png",
+    "subjects/COMP90024/week 3.md",
     "subjects/COMP90024/images/Pasted image 20250622140045.png",
     "subjects/COMP90024/images/Pasted image 20250622140029.png",
     "subjects/COMP90024/images/Pasted image 20250622124905.png",
@@ -197,9 +200,6 @@
     "subjects/COMP90024/images/Pasted image 20250622112403.png",
     "subjects/COMP90024/images/Pasted image 20250622112316.png",
     "subjects/COMP90024/images/Pasted image 20250622112249.png",
-    "subjects/COMP90024/images/Pasted image 20250622105149.png",
-    "subjects/COMP90024/images/Pasted image 20250621234257.png",
-    "subjects/COMP90024/images/Pasted image 20250621234251.png",
     "test-mcq.md",
     "subjects/SWEN90009/Agile Ceremonies.md",
     "subjects/SWEN90009/Acceptance Criteria.md",

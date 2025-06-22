@@ -93,10 +93,4 @@
 > 5. 使用Cinder配置100GB数据卷并mount到实例
 > 6. 使用Neutron配置安全组并开放22和80端口
 
-> [!question] Which are programming languages?
-> 
-> + JavaScript
-> + Python  
-> - HTML
-> - CSS
 
