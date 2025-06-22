@@ -53,8 +53,7 @@ export default defineConfig({
             {
                 text: 'Projects',
                 items: [
-                    { text: 'MUTC Website', link: 'https://www.melbunitriathlon.club' },
-                    { text: 'When2meet WeApp', link: 'https://yujunquan0127.github.io/when2meet-weapp/' },
+                    { text: 'MUTC Website', link: 'https://www.melbunitriathlon.club' }
                 ],
             },
             {
@@ -120,6 +119,16 @@ export default defineConfig({
                     text: 'Week 6 Kubernetes & ReST',
                     collapsed: true,
                     link: '/subjects/COMP90024/week 6'
+                },
+                {
+                    text: 'Week 7 Serverless(SaaS) and Fission',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 7'
+                },
+                {
+                    text: 'Week 8 Big Data and ElasticSearch',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 8'
                 }
             ],
             '/subjects/SWEN90016': [
