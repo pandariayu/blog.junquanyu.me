@@ -317,32 +317,6 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
 > d. PUT  
 > e. POST
 
-> [!question|closed] Give a short explanation for the following terms that are often used in a code versioning context:
-> 
-> 1. Commit
->     
-> 2. Checkout
->     
-> 3. Branch
->     
-> 4. Tag
->     
-> 5. Rebase
->     
-> 6. commit：提交更改到版本库
->     
-> 7. checkout：切换分支或版本
->     
-> 8. branch：代码分支，独立开发线
->     
-> 9. tag：对特定提交打标签
->     
-> 10. rebase：变基，将一组提交移到另一分支之上
->     
-
-> [!question|closed] What is the main difference between the clone and checkout commands?  
-> clone 涉及与远端 repo 的交互，是本地 repo 的初始化；checkout 只在本地 repo 的不同 branch 之间切换
-
 > [!question|closed] What are container orchestration technologies? What are the main benefits of using container orchestration tools? Name two of the most popular Docker orchestration tools.  
 > 容器编排技术用于自动化部署、管理、扩展和网络连接多个容器。主要好处有提升效率、自动化运维、弹性伸缩。常见工具有 Kubernetes 和 Docker Swarm
 

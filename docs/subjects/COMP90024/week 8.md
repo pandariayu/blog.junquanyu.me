@@ -455,3 +455,48 @@ POST /_sql?format=txt
   "query": "SELECT * FROM (SELECT rel_hum, stationid, air_temp FROM observations) PIVOT (AVG(air_temp) FOR rel_hum IN (65.0, 66.0, 67.0))"
 }
 ```
+
+
+## Exam questions
+
+> [!question|closed] Many research domains are facing “big data” challenges. Big data is not just related to the size of the data sets. Explain.  
+> 回答 big data challenge 的特点有 V 即 velocity variety 和 veracity，并对每个 V 进行解释。Velocity：当面临高速度数据处理能力以应对高速数据接收需求，如实时 gps、传感器数据等。Variety：如数据存在结构化、半结构化、非结构化特性，且存在多数据的融合使用。Veracity：随着数据增多，容易产生噪声数据、缺失数据、离散数据，均影响分析，所以需要数据清洗或验证1。
+
+> [!question|closed] What capabilities are currently offered or will be required for Cloud computing infrastructures such as the Melbourne Research Cloud to tackle these “big data” challenges? You may refer to the specific demands of particular research disciplines in your answer, e.g. life sciences, astrophysics, urban research etc.  
+> 结合 cloud computing 的五大特性，以及解决的问题进行讨论。举例：如天文数据量大，需要实时观测和高速数据传输和存储，甚至需要进行实时的数据分析。cloud computing 通过分布式数据存储及其 elasticity 解决存储和传输问题，MRC 的 Shibboleth 验证保证了数据存储和平台操作的安全性和合规，平台提供的容器化部署可以协助加速数据分析进度，缩短研究周期1。
+
+> [!question|closed] A node belonging to a four-node CouchDB cluster with n=2 replicas and q=8 shards crashes. What happens to the documents stored on it?
+> 
+> 1. 25% of the documents are lost and cannot be retrieved.
+>     
+> 2. All documents can still be retrieved.
+>     
+> 3. The cluster becomes unstable and some documents may no longer be retrieved.  
+>     应该选 2。虽然这里是 couchDB，但和 elasticsearch 均属于 document oriented DBMS，是同一个 feature。系统由于存在一个 primary 和两份 replica，且 master node 会自动进行分配，使得 shard 的不同副本需要分布在不同节点，所以单个节点的 crash 不会导致任何一份数据无法获取2。
+
+> [!question|closed] Three nodes belonging to a four-node CouchDB cluster with n=2 replicas and q=8 shards crash, what happens to the documents stored on it?
+> 
+> 4. 75% of the documents are lost and cannot be retrieved.
+>     
+> 5. All documents can still be retrieved.
+>     
+> 6. The cluster becomes unstable and some documents may no longer be retrieved.  
+>     应该选 3。任何一份 shard 会因为分布规则的限制存在于三个节点上，当系统有三个节点 crash 时，可能三份数据都不存在了，并且由于半数以上的节点 crash，整个系统会进入不稳定状态，无法对数据请求进行相应，也不存在数据的同步和备份2。
+
+> [!question|closed] In the context of distributed databases, explain the concepts of Consistency  and availability
+> 
+> Consistency: 每个 client 从所有 node 获得的响应相同。
+>  Availability: 每个 client 都可以从 cluster 中任何 node 获得回应2。
+>     
+
+> [!question|closed] Give an example of a database technology that supports Availability in the presence of a (network) partition.  
+> 可以直接用 elastic search 举例，其 shard 和 replica 的特性可以在部分节点掉线或 crash 的时候，通过副本保证所有数据的可用性3。
+
+> [!question|closed] In the context of Elastic Search clusters what is the meaning of:
+> 
+> 9. Replica number  
+>     一份数据被复制了几份副本
+>     
+> 10. Number of shards  
+>     一份数据被划分成了多少个部分3。
+>     

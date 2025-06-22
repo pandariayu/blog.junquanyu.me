@@ -162,3 +162,26 @@ fission route create --url /health --function health
 - `/courses/{courseid}` (用于特定课程)
 - `/courses/{courseid}/students`
 
+## Exam quetions
+
+> [!question|closed] In a serverless environment (FaaS), you wrote a function that converts a JPEG image into a PDF document. A user uploads an image that is in a format that your function does not recognize and since you have been a little sloppy with your exception handling, this causes the function to crash. What happens to the cluster the function runs on?
+> 
+> 1. The cluster keeps on converting images into PDFs, although that specific request is lost.
+>     
+> 2. The cluster stops converting images into PDFs.  
+>     应该选 1，因为 FaaS 的特性有 free of side effect 以及 stateless，并且函数按需在容器中触发，即使函数失败也不影响到整个系统。每个函数仅针对单个请求进行返回，函数间相互独立。如果一个请求失败导致 cluster 停止工作，这种类似单点失效的 feature 不是一个系统应该具有的特性1。
+
+> [!question|closed] Discuss the role of functions in serverless computing. Your answer should include key properties of functions that make them suitable for serverless environments.  
+> 函数是 serverless 的最小执行单元，具有无状态、短暂、可快速部署和弹性伸缩等特性，适合高并发和事件驱动的场景4。
+
+> [!question|closed] OpenFaaS is an open source framework that can be used to deliver serverless computing solutions. Discuss the role of container technologies such as Docker in OpenFaaS and their relationship with functions and how they might be used to support auto-scaling.  
+> 容器技术为 FaaS 提供运行环境，函数以容器为单位部署和隔离，支持弹性伸缩和高可用。Docker 等容器技术可实现函数的快速启动和自动扩容，提升系统的灵活性和可维护性4。
+
+> [!question|closed] In the context of Cloud, what is meant by serverless computing?  
+> serverless 是一种云计算模型，对应 FaaS，开发者只进行代码层面的开发，将业务交付给云平台进行运行和管理，包括函数的增删、更新执行，是一种微服务架构4。
+
+> [!question|closed] List three reasons why it may be beneficial to choose a serverless solution.
+> 
+> 无需运维底层基础设施，开发者专注于业务逻辑。
+> 按需计费，资源利用率高，节省成本。
+> 易于扩展，自动弹性伸缩。
