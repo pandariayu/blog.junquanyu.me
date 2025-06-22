@@ -129,7 +129,18 @@ export default defineConfig({
                     text: 'Week 8 Big Data and ElasticSearch',
                     collapsed: true,
                     link: '/subjects/COMP90024/week 8'
-                }
+                },
+                {
+                    text: 'Week 9 Virtualisation & Amazon AWS vs MRC',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 9'
+                },
+                {
+                    text: 'Week 10 Security and Clouds',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 10'
+                },
+                
             ],
             '/subjects/SWEN90016': [
                 {

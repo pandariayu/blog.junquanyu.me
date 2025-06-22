@@ -1,5 +1,7 @@
 # Cloud Computing, OpenStack & Introducing NeCTAR
 
+[[toc]]
+
 > [!quote]
 > Cloud computing is a model for  enabling ubiquitous, convenient, on-demand  network access to a shared pool of configurable  computing resources (e.g., networks, servers, storage, applications, and services) that can be  rapidly provisioned and released with minimal management effort or service provider interaction.
 > 云计算是一种模型，它支持对==可配置计算资源==（例如，网络、服务器、存储、应用程序和服务）的共享池进行无处不在、便捷、按需的网络访问，这些资源可以通过==最少的管理工作或服务提供商交互快速配置和发布==。
