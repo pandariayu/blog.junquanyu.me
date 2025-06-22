@@ -88,6 +88,7 @@ export default defineConfig({
                 timeStyle: "medium",
             },
         },
+        outline: 'deep',
         sidebar: {
             '/subjects/COMP90024': [
                 {

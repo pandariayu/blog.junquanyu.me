@@ -1,7 +1,4 @@
 # Spartan & HPC
-
-[[toc]]
-
 ## Spartan
 
 > [!quote]

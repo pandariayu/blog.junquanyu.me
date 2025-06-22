@@ -1,5 +1,4 @@
 # Containerization and Docker & CI/CD
-[[toc]]
 
 ## Containerization
 

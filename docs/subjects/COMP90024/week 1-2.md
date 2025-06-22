@@ -1,6 +1,5 @@
 # Information Session & How we got here
 
-[[toc]]
 ## Cloud Computing
 
 ### Definition

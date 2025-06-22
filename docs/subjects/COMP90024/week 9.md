@@ -1,7 +1,5 @@
 # Virtualisation & Amazon AWS vs MRC
 
-[[toc]]
-
 ## Virtualisation
 
 ## MRC vs Amazon AWS

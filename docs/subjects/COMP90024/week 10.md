@@ -1,6 +1,5 @@
 # Security and Clouds
 
-[[toc]]
 ## Importance
 
 - If systems are not secure:
