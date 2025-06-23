@@ -53,10 +53,12 @@ Infrastructure as Code (IaC) is the practice of using code (mostly configuration
 3. K8s 提供更多工具和服务用于构建复杂系统
 
 - Docker Compose allows to define and manage a set of containers that run on the same compute node and cooperate to deliver a functionality (in Kubernetes this is called a “Pod”)  Docker Compose 允许定义和管理一组运行在同一计算节点上的容器，并协作提供功能（在 Kubernetes 中称为“Pod”）
-- An example of a Docker Compose stack: an Nginx container, a WordPress container, and a MySQL container that are linked together to deliver a complete WordPress deployment (as per workshop)  
-  Docker Compose 堆栈的示例：一个 Nginx 容器、一个 WordPress 容器和一个 MySQL 容器，它们链接在一起以提供完整的 WordPress 部署
+	- An example of a Docker Compose stack: an Nginx container, a WordPress container, and a MySQL container that are linked together to deliver a complete WordPress deployment (as per workshop)  
+	- Docker Compose 堆栈的示例：一个 Nginx 容器、一个 WordPress 容器和一个 MySQL 容器，它们链接在一起以提供完整的 WordPress 部署
+	
 - Docker Swarm extends this capability to a set of compute nodes  
   Docker Swarm 将此功能扩展到一组计算节点
+
 - Kubernetes and Docker Swarm have the same core functionality (managing  containers on a set of compute nodes), but Docker Swarm does not do much beside this, whilst Kubernetes adds powerful abstractions and tools to build complex systems
   Kubernetes 和 Docker Swarm 具有相同的核心功能（管理一组计算节点上的容器），但除此之外，Docker Swarm 并没有做太多事情，而 Kubernetes 添加了强大的抽象和工具来构建复杂的系统
 
@@ -119,11 +121,11 @@ Pod 是k8s调度的最小单位，有自身的生命周期，同时也是k8s最�
 
 ![](./images/Pasted%20image%2020250621180933.png)
 
-##### Cons
+##### Pros
 
 - **微服务 (Microservices):** Pods 促成了一种基于微服务的、更松散耦合的架构，在这种架构中，应用程序由许多独立的服务构建而成 。
     
-- **边车模式 (Sidecar Pattern):** 一种常见的模式是有一个主应用容器和一个或多个“边车 (sidecar)”容器，用以扩展或增强其功能 。
+- **边车模式 (Sidecar Pattern):** 一种常见的模式是有==一个主应用容器和一个或多个“边车 (sidecar)”容器==，用以扩展或增强其功能 。
 
     - **日志记录示例:** 应用程序可以将日志写入文件，而一个边车容器可以收集这些日志并将其转发到中央日志系统。这将日志逻辑与应用程序代码解耦 。
     - **HTTP头操作示例:** 一个边车容器可以与主应用一起运行，以添加或剥离 HTTP 头，用于安全或内容丰富化 。
@@ -131,7 +133,7 @@ Pod 是k8s调度的最小单位，有自身的生命周期，同时也是k8s最�
 - **初始化容器 (Init Containers):** 一个 pod 可以包含特殊的 `init` 容器，这些容器在主应用容器启动_之前_运行并完成。它们用于执行设置任务，比如创建数据库模式或填充数据表 。
 #### Deployment & ReplicaSet
 
-- **目的:** Pods 通常由 `Deployment` 来管理 。Deployment 的主要作用是为一组副本 Pods 声明一个期望状态，并确保该状态得以维持。
+- **目的:** Pods 通常由 `Deployment` 来管理 。Deployment 的主要作用是为==一组副本 Pods 声明一个期望状态，并确保该状态得以维持==, 比如维持几个replicas
 - **清单示例:** 这个 YAML 示例展示了一个名为 `harvester-flickr` 的 Deployment 。
     ![](images/Pasted%20image%2020250621191400.png)
     - `kind: Deployment`: 指定对象类型 。
@@ -181,13 +183,12 @@ Pod 是k8s调度的最小单位，有自身的生命周期，同时也是k8s最�
 - **仓库 (Repositories):** Charts 通常从 Helm **仓库**下载 。
 - **定制化:** Helm charts 是可定制的。可以通过命令行设置参数，或提供一个自定义的值 (values) YAML 文件 。
 
-
 ## ReST & Web service
 
 此页介绍了面向服务的架构 (Service-oriented Architecture, SoA) 的概念。
 
-- **问题:** 当软件组件分布在不同的机器上时，它们无法像在同一台机器上那样通过直接的方法（如简单的函数调用）进行通信 。
-- **解决方案:** 组件必须以更“松散耦合”的方式进行交互 。**服务 (Services)** 通常用于此目的 。
+- **问题:** 当软件组件分布在不同的机器上时，它们==无法像在同一台机器上那样通过直接的方法（如简单的函数调用）进行通信 ==。
+- **解决方案:** 组件必须以更“==松散耦合==”的方式进行交互 。**服务 (Services)** 通常用于此目的 。
 - **定义:** 面向服务的架构 (SoA) 是一种架构模式，其中==应用程序组件通过通信协议（通常是通过网络）向其他组件提供服务 。==
 
 ### SoA & Web Service
@@ -216,7 +217,7 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
 
 - (ReST) 旨在唤起人们对一个设计良好的 Web 应用程序行为方式的想象：一个由网页组成的网络（一个虚拟状态机），用户通过选择链接（状态转换）在应用程序中前进，从而导致下一个页面（代表应用程序的下一个状态）被传输给用户并呈现出来供其使用。” 。
 
-- **解读:** 核心思想是，一个 Web 应用程序是一系列的状态（资源/页面）。用户通过点击超链接从一个状态导航到下一个状态。新状态的“表现层 (representation)”（例如 HTML、JSON）的“传输 (transfer)” 导致了客户端应用程序状态的改变。
+- **解读:** 核心思想是，一个 Web 应用程序==是一系列的状态（资源/页面）==。用户通过点击超链接从一个状态导航到下一个状态。新状态的“表现层 (representation)”（例如 HTML、JSON）的“传输 (transfer)” 导致了客户端应用程序状态的改变。
 
 #### Representational State Transfer
 
