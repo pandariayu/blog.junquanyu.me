@@ -318,6 +318,39 @@ the system meets the specified requirements and behaves as expected  E2E 测试�
 - **用途**: 一台经过特殊加固、作为访问内部私有网络**唯一入口**的服务器。
 - **如何使用**: 你不能直接 SSH 到内部的服务器，必须先 SSH 到堡垒机，然后再从堡垒机“**跳转 (Jump)**”到内部的目标服务器。 SSH 的 `-J` 参数就是为此设计的。
 
+### Docker Basic Instructions
+
+- **Docker 镜像管理**：
+    - 登录注册中心：`docker login --username=foo`（公共）或指定私有注册中心
+    - 拉取镜像：`docker pull nginx`
+    - 列出镜像：`docker images` 或 `docker image ls`
+    - 推送镜像：`docker push alwynpan/comp90024:nginx`（可选先用 `docker tag` 重命名).
+        
+- **Docker 容器管理**：
+    - 运行容器：`docker run --name nginx -p 8080:80 -d nginx`（直接运行）或先创建再启动
+    - 列出容器：`docker ps`（运行中）或 `docker ps -a`（全部 ）
+    - 停止/重启/删除容器：`docker stop nginx`、`docker restart nginx`、`docker rm nginx`（或 `docker rm -f` 删除运行中容器）
+    - 访问容器内部：`docker exec -ti nginx bash`（用于调试，不推荐常规使用） 
+        
+- **数据管理**：
+    - 创建卷：`docker volume create htdocs` 
+    - 挂载卷或绑定目录：`docker run -v htdocs:/usr/share/nginx/html`（命名卷）或绑定本地目录 
+
+- **构建镜像**：
+    - 使用 Dockerfile 构建：`docker build -t demo2 .` 
+    - Dockerfile 常用指令：`FROM`（基础镜像）、`ENV`（环境变量）、`WORKDIR`（工作目录）、`COPY`（复制文件）、`RUN`（构建时执行命令）、`ENTRYPOINT`（启动时执行）、`CMD`（默认命令参数） 
+
+### Docker Adv Function
+
+- **Docker Compose**：用于管理多容器应用，如启动 WordPress、MySQL 和 phpMyAdmin 的组合。
+    - 启动：`docker compose up -d` 5.
+    - 停止/删除：`docker compose stop` 或 `docker compose down` 5.
+- **Docker 安全**：
+    - 镜像漏洞扫描：`docker scout cves wordpress:6.7.2-php8.1-fpm-alpine` 5.
+    - 获取更新建议：`docker scout recommendations` 5.
+    - 硬化镜像：使用非 root 用户、只读文件系统运行容器，限制权限 5.
+- **Docker 网络**：支持桥接网络、覆盖网络等，用于容器间通信 
+
 ## Exam questions
 
 > [!question|closed] 以下关于Docker组件的描述，正确的是（）
@@ -332,4 +365,20 @@ the system meets the specified requirements and behaves as expected  E2E 测试�
 > - 多个Repository组成一个Registry，Registry 只能有一个Repo 用于存储Image
 > - Container 是基于image创建的运行实例，运行着应用所需的代码
 
+> [!question|closed] A researcher wants to attach to an already running Postgresql container and list all of the databases it contains. The command to list all of the database is `psql -U postgres -c “\l”`. The name of the container is postgres and it exposes the port 5432 to the host. Is the following command correct? If not, please correct it: `docker exec -p 5432 --name postgres sh -c psql -U postgres -c “\l”`  
+> 主要问题是 docker exec 不需要 -p 5432 和 --name，正确命令：`docker exec postgres sh -c "psql -U postgres -c '\l'"`
+
+> [!question|closed] What is the main difference between a container and a virtual machine?  
+> 主要区别在于操作系统层面，容器共享宿主内核，虚拟机包含独立操作系统
+
+> [!question|closed] What is the main difference between Docker Compose and Docker SWARM?  
+> Compose 用于单机多容器，Swarm 用于多主机集群管理
+
+> [!question|closed] What is the main difference between a volume mount and a bind mount?  
+> volume 存储于专属路径，bind mount 为文件目录映射
+
+> [!question|closed] What do the following Docker commands do?  
+> docker service create --replicas 2 --name nginx nginx  
+> docker service update --image=nginx:alpine nginx  
+> 前者为 swarm 服务创建，其中一个是创建副本，另一个为镜像升级
 

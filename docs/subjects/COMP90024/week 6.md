@@ -391,21 +391,3 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
 > [!question|closed] What are container orchestration technologies? What are the main benefits of using container orchestration tools? Name two of the most popular Docker orchestration tools.  
 > 容器编排技术用于自动化部署、管理、扩展和网络连接多个容器。主要好处有提升效率、自动化运维、弹性伸缩。常见工具有 Kubernetes 和 Docker Swarm
 
-> [!question|closed] A researcher wants to attach to an already running Postgresql container and list all of the databases it contains. The command to list all of the database is psql -U postgres -c “\l”. The name of the container is postgres and it exposes the port 5432 to the host. Is the following command correct? If not, please correct it: docker exec -p 5432 --name postgres sh -c psql -U postgres -c “\l”  
-> 主要问题是 docker exec 不需要 -p 5432 和 --name，正确命令：docker exec postgres sh -c "psql -U postgres -c '\l'"
-
-> [!question|closed] What is the main difference between a container and a virtual machine?  
-> 主要区别在于操作系统层面，容器共享宿主内核，虚拟机包含独立操作系统
-
-> [!question|closed] What is the main difference between Docker Compose and Docker SWARM?  
-> Compose 用于单机多容器，Swarm 用于多主机集群管理
-
-> [!question|closed] What is the main difference between a volume mount and a bind mount?  
-> volume 存储于专属路径，bind mount 为文件目录映射
-
-> [!question|closed] What do the following Docker commands do?  
-> docker service create --replicas 2 --name nginx nginx  
-> docker service update --image=nginx:alpine nginx  
-> 前者为 swarm 服务创建，其中一个是创建副本，另一个为镜像升级
-
-
