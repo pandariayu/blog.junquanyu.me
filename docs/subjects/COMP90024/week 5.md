@@ -10,8 +10,8 @@
   ==容器化允许instances (i.e. containers)共享单个single host OS（以及相关的驱动程序、二进制文件和库）==，以减少资源浪费，因为每个容器只保存应用程序及其相关二进制文件
 
 ### Virtual Machines vs Containers
-![](./images/Pasted%20image%2020250620212653.png)
 
+![](./images/Pasted%20image%2020250620212653.png)
 
 | Feature          | Docker Engine                       | VM                                        |
 | ---------------- | ----------------------------------- | ----------------------------------------- |
@@ -54,6 +54,9 @@ Container orchestration technologies feature
 Goals:  
 - Simplify container management processes  简化容器管理流程
 - Help to manage availability and scaling of containers 帮助管理容器的可用性和扩展
+
+> [!note]
+> **容器编排 (Container Orchestration)** 是一种**自动化管理、部署、扩展和运维大量容器**的技术。容器编排工具就是实现这种自动化的平台。
 ## Introduction to Docker
 
 ### Docker Nomenclature 命名法
@@ -160,6 +163,16 @@ Running a tool (commonly known as a linter) on source code to analyze it for pot
 - Ensure Consistency  确保一致性
 - Early Detection of Errors  及早发现错误
 
+**E.g. ES Lint 在你的项目中会检查什么？**
+
+1. **代码风格一致性**：
+    - 变量命名是否遵循驼峰式 (camelCase)。
+    - 是否使用了单引号或双引号。
+    - 代码缩进是使用空格还是 Tab。
+    - 函数、类和变量的声明方式是否一致。
+2. **潜在的语法和逻辑错误**：
+	- 未使用的变量
+	- React Hooks 的规则
 #### Dependency Check
 
 Ensures your code is not only functional but safe from threats. Automatically audit every change,  
@@ -200,8 +213,8 @@ software are tested in isolation from the rest of the application
 
 **Integration Tests** - focuses on the interactions between integrated components or systems to  
 detect interface defects  侧重于集成组件或系统之间的交互，以检测接口缺陷 
-**End-to-End Tests**- examines the complete flow of an application from start to finish to ensure  
-the system meets the specified requirements and behaves as expected  从头到尾检查应用程序的完整流程，以确保系统满足指定的要求并按预期运行 
+**End-to-End Tests** - examines the complete flow of an application from start to finish to ensure  
+the system meets the specified requirements and behaves as expected  E2E 测试是最高层级的测试，它从用户的视角来验证整个系统的功能。它不关心内部实现，只关心输入和输出。这通常会使用像 Cypress 或 Playwright 这样的自动化测试工具来完成，它们可以驱动一个真实的浏览器进行操作。
 
 **Benefits**  
 
@@ -209,12 +222,101 @@ the system meets the specified requirements and behaves as expected  从头到�
 - Improve Team Collaboration 改善团队协作
 - Higher Software Quality 更高的软件质量
 
-#### Pack the Software
 
-Build Docker image
+#### Pack the Software
 
 #### Deployment
 
+## Workshop
+
+### Package Manager
+
+- **APT (Advanced Packaging Tool)**: 这是 **Ubuntu** 系统上的软件管家。
+    
+    - `sudo apt update`: 更新可安装的软件包列表（不是升级软件）。
+    - `sudo apt upgrade`: 将已安装的所有软件包升级到最新版本。
+    - `sudo apt install <包名>`: 安装一个新软件包。
+        
+- **Homebrew**: 这是 **macOS** 系统上最流行的软件管家（也支持 Linux）。
+    
+    - `brew install <包名>`: 安装一个新软件包及其依赖。
+    - `brew upgrade`: 升级所有可升级的软件包。
+    
+
+---
+
+### `jq` & `asdf`
+
+#### `jq` - JSON processor
+
+- **用途**: 一个轻量级的命令行工具，专门用来处理（解析、筛选、转换）JSON 格式的数据。 在与 OpenStack API 交互时，返回的结果常常是 JSON 格式，`jq` 在这种场景下非常有用。
+
+- **提取所有员工的姓名** ：
+
+    ```Bash
+    jq '.employees[].name' data.json
+    ```
+    
+- **添加一个新员工到 employees 数组中** ：
+    
+    ```Bash
+    jq '.employees += [{"name": "Jane Doe", "age": 25, "department": "Design"}]' data.json
+    ```
+    
+- **添加新员工并将更改保存回原文件** ： 这个例子展示了如何通过一个临时文件 (`tmp.json`) 来安全地覆盖原文件 。
+    
+    ```Bash
+    jq '.employees += [{"name": "Jane Doe", "age": 25, "department": "Design"}]' data.json > tmp.json && mv tmp.json data.json
+    ```
+    
+- **从 employees 数组中删除名为 "Jane Doe" 的员工** 
+    
+    ```Bash
+    jq '.employees |= map(select(.name != "Jane Doe"))' data.json
+    ```
+
+#### `asdf` - version manager
+
+- **用途**: 一个统一的工具，用来管理多种开发工具（如 kubectl, helm）的**不同版本**。
+- **核心流程**: 先添加插件 (`asdf plugin add`)，再安装指定版本 (`asdf install <工具名> <版本号>`)，最后设置在当前目录或全局使用的版本 (`asdf local` 或 `asdf global`)。
+- 如果项目A需要用 1.20 版本的 `kubectl`，而项目B需要用最新的 1.31.1 版本 ，你不需要反复卸载安装。用 `asdf` 就可以在两个项目目录间**一秒切换**，让它们使用各自指定的版本，互不干扰。
+- 有点像nvm
+
+---
+
+### Pipeline & Substitution
+
+#### Unix pipeline (`|`)
+
+- **用途**: 将前一个命令的**标准输出 (STDOUT)**，直接作为后一个命令的**标准输入 (STDIN)**。
+- **例子**: `openstack flavor list | grep 'uom.mse.2c9g' | awk '{print $2}'`
+    1. `openstack flavor list`: 列出所有规格。
+    2. `| grep 'uom.mse.2c9g'`: 把列表结果交给 `grep`，筛选出包含特定名称的**那一行**。
+    3. `| awk '{print $2}'`: 把筛选出的那一行交给 `awk`，打印出**第二个字段**（也就是 ID）。
+
+#### 命令替换 `$()`
+
+- **用途**: shell 会先执行 `$(...)` 括号中的命令，然后将整个 `$(...)` 表达式**替换为该命令的输出结果**。
+- **例子**: 在创建一个需要 `master-flavor` ID 的命令时，可以直接用 `$(openstack flavor list | ...)` 来动态获取这个 ID，而不用先查询、复制、再粘贴。
+    
+
+---
+
+### Advanced SSH
+
+#### `ssh-add`
+
+- **用途**: 将私钥添加到一个“代理”中，这样在当前会话中再次使用该私钥时，就无需重复输入密码。
+
+#### SSH Tunnelling / Port Forwarding
+
+- **用途**: 将网络数据通过一个加密的 SSH 连接来传输。 它可以让你安全地访问一个被防火墙阻挡的远程服务，仿佛该服务就在你的本地机器上。
+- **例子**: `-L 8080:<remote>:80` 表示将本地的 8080 端口，通过 SSH 连接，转发到远程服务器的 80 端口。
+
+#### Bastion Host / Jump Host
+
+- **用途**: 一台经过特殊加固、作为访问内部私有网络**唯一入口**的服务器。
+- **如何使用**: 你不能直接 SSH 到内部的服务器，必须先 SSH 到堡垒机，然后再从堡垒机“**跳转 (Jump)**”到内部的目标服务器。 SSH 的 `-J` 参数就是为此设计的。
 
 ## Exam questions
 

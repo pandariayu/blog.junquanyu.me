@@ -64,8 +64,7 @@ Infrastructure as Code (IaC) is the practice of using code (mostly configuration
 
 - **起源:** 它最初由谷歌开发，并于2014年成为一个开源项目。
 - **行业标准:** 它是容器编排的行业标准。围绕它已经形成了一个完整的工具生态系统，其中许多由云原生计算基金会（CNCF）管理。
-- **方法论:** 在 k8s 中，工程师主要编写 YAML 文件（称为清单 "manifests"）来定义系统配置。也可以使用 JSON。这与基础设施即代码和声明式应用管理的原则相符。
-- **关键特性:**
+- **方法论:** 在 k8s 中，工程师主要编写 YAML 文件（称为清单 "manifests"）来定义系统配置。也可以使用 JSON。这与基础设施即代码和声明式应用管理的原则相符
 
 ### K8s on Cloud
 

@@ -36,11 +36,10 @@
 
 ![](./images/Pasted%20image%2020250618213419.png)
 
-
 | Software as a Service       | 只要通过网络就可以使用软件功能，如无提供商负责部署维护和管理<br>(e.g. Gmail, Sharepoint, Office 365) |
 | --------------------------- | ---------------------------------------------------------------------- |
-| Platform as a Service       | 在服务提供商的平台上进行应用开发测试部署和管理 无需关心底层基础设施 (e.g. Vercel, Tencent )             |
-| Infrastructure as a Service | 用户统筹配置各类计算资源来运行自己的业务，无需实际购买和维护硬件设备 (e.g. AWS)                          |
+| Platform as a Service       | ==在服务提供商的平台上进行应用开发测试部署和管理 无需关心底层基础==设施 (e.g. Vercel, Tencent )         |
+| Infrastructure as a Service | ==用户统筹配置各类计算资源来运行自己的业务，无需实际购买和维护硬件设备== (e.g. AWS)                      |
 
 ## OpenStack
 
@@ -80,6 +79,40 @@
 > 	- Fine-grained access control <br/>精细访问控制
 > 	- common file access protocols <br/>常见的文件访问协议
 
+|          | **Cinder (块存储)**      | **Swift (对象存储)**         |
+| -------- | --------------------- | ------------------------ |
+| **比喻**   | **虚拟硬盘 (Hard Drive)** | **网络硬盘/云盘 (Dropbox/S3)** |
+| **存储单元** | 块 (Block)             | 对象 (Object)              |
+| **访问方式** | 挂载到操作系统，作为设备访问        | 通过 HTTP API 访问           |
+| **主要用途** | 虚拟机系统盘、数据库            | 备份、归档、网站静态资源、多媒体文件       |
+| **性能**   | 低延迟，高 IOPS            | 高吞吐量，延迟相对较高              |
+| **数据结构** | 原始块，由操作系统格式化          | 包含数据和元数据的对象              |
+| **连接性**  | 通常与单个虚拟机绑定            | 独立于任何虚拟机，可被任何授权应用访问      |
+
+## Workshop
+
+#### Access & Security
+
+- **Key Pairs (密钥对)** 是访问云主机 (Instance) 的唯一凭证 。
+- 它由一个公钥和一个私钥组成 。私钥必须妥善保管，权限需要设置为 `600`，否则会因为权限过于开放而被拒绝连接 。
+- **Security Groups (安全组)** 扮演虚拟防火墙的角色，控制进出云主机的网络流量 。
+- 默认的安全组只允许 SSH (端口 22) 流量 。如果想访问网页服务，必须手动添加入站规则以允许 HTTP (端口 80) 的流量 。
+
+#### Instance & Storage
+
+- **Instance (实例/云主机)** 是你在云上创建的虚拟机 。
+- 启动一个云主机需要选择几个关键配置：
+    - **Source (源)**：通常选择一个镜像 (Image)，推荐为 `NECTAR Ubuntu 22.04 LTS` 。
+    - **Flavor (规格)**：定义了云主机的 CPU、内存和存储容量 。
+    - **Key Pair (密钥对)**：必须选择，否则无法登录 。
+- **Volume (卷)** 是可以挂载到云主机上的块存储设备（类似硬盘） 。
+- 创建一个卷后，需要经过 **“Attach (附加) -> Format (格式化) -> Mount (挂载)”** 这一系列步骤才能在系统中使用 。
+
+#### CLI
+
+- 使用命令行前，必须先下载 `openrc.sh` 文件并设置 API 密码 。
+- `source` 命令用于加载 `openrc.sh` 文件，它的作用是导出与 OpenStack API 交互所需环境变量 
+- 知道有与图形界面功能相对应的命令，例如 `openstack server create` , `openstack volume create` , `openstack security group create` 。
 ## Questions
 
 > [!question|closed] What do you need to obtain from the Melbourne Research Cloud before you can interact with the Melbourne Research Cloud's openStack API? What does this file do?
