@@ -3,6 +3,7 @@ import callout from 'vitepress-plugin-callout'
 import markdownit from 'markdown-it'
 import container from "markdown-it-container";
 import mark from "markdown-it-mark";
+import lightbox from "vitepress-plugin-lightbox"
 
 export default defineConfig({
     lang: 'zh-CN',
@@ -23,6 +24,7 @@ export default defineConfig({
             });
             md.use(callout);
             md.use(mark);
+            md.use(lightbox, {});
         },
         math: true
     },

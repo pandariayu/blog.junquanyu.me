@@ -21,6 +21,22 @@
 3. `squeue -j <job_id>`  查询特定作业的状态
 4. `squeue --me`  查询我（当前用户）的所有作业的状态
 5. `my-job-stats -j <job_id> -a`  查询特定作业的统计信息（通常是作业完成后）
+
+```sh
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=sapphire
+#SBATCH --time 0-12:00:00
+
+
+module load GCC/11.3.0 
+module load mpi4py/3.1.4-Python-3.11.3
+time mpiexec -n 1 python3 case2.py 
+
+my-job-stats -a -n -s
+```
 ## Exam questions
 
 ![](./images/Pasted%20image%2020250619215410.png)

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/week 2.md",
+                "file": "subjects/COMP90024/week 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week 2"
+              "title": "week 3"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a4fdbd5c4e401166",
@@ -196,9 +195,9 @@
   },
   "active": "2592b7efe6eb8644",
   "lastOpenFiles": [
+    "subjects/COMP90024/week 2.md",
     "subjects/COMP90024/index.md",
     "subjects/COMP90024/week 1.md",
-    "subjects/COMP90024/week 2.md",
     "subjects/COMP90024/week 8.md",
     "subjects/COMP90024/week 3.md",
     "subjects/COMP90024/week 7.md",
