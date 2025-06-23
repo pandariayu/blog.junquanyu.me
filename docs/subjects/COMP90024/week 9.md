@@ -174,7 +174,7 @@ VMM 向客户操作系统==暴露一个特殊的接口以获得更好的性能==
 
 ### Two different hypervisor architectures
 
-- **Bare Metal Hypervisor (裸金属 Hypervisor):** 在这种架构中，VMM 直接运行在物理硬件上 。 没有底层的宿主操作系统。VMM 本身负责管理硬件和设备驱动程序 。 VMware ESX Server 是一个例子 。
+- **Bare Metal Hypervisor (裸金属 Hypervisor):** 在这种架构中，==VMM 直接运行在物理硬件上 。 没有底层的宿主操作系统==。VMM 本身负责管理硬件和设备驱动程序 。 VMware ESX Server 是一个例子 。
 - **Hosted Virtualisation (托管式虚拟化):** 在这种架构中，VMM 作为一个应用程序运行在传统的宿主操作系统（如 Windows 或 Linux）之上 。 VMware Workstation 是一个例子 。
 
 ### Operating System Level Virtualisation

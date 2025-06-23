@@ -6,7 +6,7 @@
 
 - Have faster processors 拥有更快的处理器
 	- Switch your  n GHz CPU for a  2n GHz one = 2x faster  把频率搞高一点
-	- **Easy to do, but costs more** ** 做起来容易，但成本更高
+	- Easy to do, but costs more 做起来容易，但成本更高
 - Limits of fundamental physics/matter (nanoCMOS)
 
 > [!example] 堆配置

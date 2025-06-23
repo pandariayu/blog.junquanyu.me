@@ -95,7 +95,7 @@
 4. Liability责任和义务的认定
 	- AWS 客户协议 - 客户承担了几乎所有的风险。
 5. Licensing 模型的选择 (per user/per server/per organization...)
-6. 如何定义和开发共享的面向安全的workflow
+6. 如何定义和开发共享的面向安全的workflow - 整合 SoA服务/数据流
 7. 技术和法律的变化
 
 ## Exam Questions
