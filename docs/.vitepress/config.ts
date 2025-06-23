@@ -97,9 +97,14 @@ export default defineConfig({
                     link: '/subjects/COMP90024/'
                 },
                 {
-                    text: 'Week 1-2 Information Session & How we got here',
+                    text: 'Week 1 Information Session & How we got here',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 1-2'
+                    link: '/subjects/COMP90024/week 1'
+                },
+                {
+                    text: 'Week 2 Distributed and Parallel Computing Systems',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/week 2'
                 },
                 {
                     text: 'Week 3 HPC & Spartan',

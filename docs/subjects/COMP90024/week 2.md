@@ -1,78 +1,5 @@
 # Distributed and Parallel Computing Systems
 
-## Cloud Computing
-
-### Definition
-
-1. What: Different types of computing resources
-2. How: Through network
-3. Why: On-demand (Lower cost & better  utilization)
-4. Cloud computing is a technology to ==utilize heterogeneous computing resource through network== and provide on-demand service
-### Characteristics
-
-#### On-demand self-service
-
-A consumer can provision computing capabilities as needed without requiring human interaction interaction with each service provider.
-消费者可以根据需要预置计算功能，而无需与每个服务提供商进行人工交互。
-#### Network access
-
-Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous client platforms.
-
-功能可通过网络获得，并通过促进异构客户端平台使用的标准机制进行访问。
-#### Resource pooling
-
-The provider's computing resources are pooled to serve multiple consumers using a multi-tenant model potentially with different physical and virtual resources that can be dynamically assigned and reassigned according to consumer demand.
-
-提供商的计算资源被池化，以使用多租户模型为多个消费者提供服务，这些模型可能具有不同的物理和虚拟资源，这些资源可以根据消费者需求动态分配和重新分配。
-
-#### Rapid elasticity
-
-Capabilities can be elastically provisioned and released, in some cases automatically, to scale rapidly upon demand
-功能可以弹性配置和发布，在某些情况下是自动的，以便根据需要快速扩展
-#### Measured service
-
-Cloud systems automatically control and optimize resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service
-云系统通过利用适合服务类型的某种抽象级别的计量功能来自动控制和优化资源使用
-
-> [!question|closed] 什么是Heterogeneous? 通过网络使用多种Computing resource 有什么好处？
->- **Heterogeneous异质**:  计算资源的类型/架构/配置/平台/性能/...差异
->- 异构性可能会导致兼容性问题，影响服务运行
->- 网络的优势:  打破物理边界/统一管理快速调配
-
-> [!question|closed] 什么是Pooling? Pooling有什么好处?
->- 由于处理任务类型不同 打破传统资源界限，抽象为==更小的单位==进行组合调配
->- Resource pooling的好处:   On-demand/利用率高/成本低/服务提供商统一维护/技术门槛低
-
-> [!question|closed] Cloud computing 支持Elasticity是否是必要的？举出几个例子
->- Black Friday / Ticket Saleing / NBA Final...
->- 不支持Elasticity的后果:系统崩溃/服务不可用/成本难以控制
-
-## Cloud Computing History
-
-Cloud computing并非一日发展而来的 科技日益进步 需求在持续增加 研究重点也在持续发生变化和迁移
-
-**Distributed System:** cumputer-computer 任务驱动 利用大量不同的计算资源
-系统复杂性的提升 -> 各项成本的提升 -> 浅层次抽象 -> Cluster computing
-
-**Grid computing:** 深层次抽象 resource pooling + network 资源集中分配本质可以理解为提取并消除计算资源间的差异
-
-### Grid Computing 与 Cloud Computing 的关系
-
-都可以实现分布式计算 提供强大性能
-
-| Grid Computing              | Cloud Computing                 |
-| --------------------------- | ------------------------------- |
-| 多用于科研 整合计算资源构成Supercomputer | 可以认为是Grid computing的商业实现 提供运营服务 |
-| 更关注计算能力/存储能力                | 提供抽象资源/服务                       |
-| 技术门槛高于Cloud Computing       | 建立在Grid Computing之上             |
-> [!question|closed] 以下有关Grid Computing和cloud computing的关系，正确的是( )
-> 
-> - Grid computing 是 cloud computing的一种特殊形式，主要为个人提供服务
-> - Cloud computing 完全取代了Grid computing, 因为前者的技术更为先进
-> - Grid Computing 更侧重于将不同组织的资源整合用于科研等，Cloud computing则更多侧重于通过网络为用户提供灵活的抽象资源和服务
-> - Grid computing和Cloud computing在技术架构上完全不同，没有人任何关联
-
-
 ## Compute Scaling
 
 ### Vertical Computational Scaling
@@ -116,6 +43,7 @@ Cloud computing并非一日发展而来的 科技日益进步 需求在持续增
 ### Moore's Law
 
 The number of transistors in an IC doubles about every two years.
+
 > [!info] 
 >整体趋势: 性能提升，成本下降
 
@@ -128,6 +56,9 @@ $$T(N) = \text{time for N parallel computations}$$
 $$T(1) = \text{speed up}= T(1)/T(N)$$
 
 ### Amdahl's Law
+
+> [!info] 
+>程序中可串行化部分（无法并行处理的部分）的比例决定了并行计算的性能上限
 
 $$1/(1-\alpha)$$
 
@@ -172,8 +103,6 @@ This means the maximum speedup is **20x**, no matter how many processors are use
 > [!info] 
 >可以通过增大问题规模和处理器个数，达到任意加速比
 
-$$$$
-
 $\alpha$ = Fraction of program that can be done in parallel <br/>
 $1-\alpha$ = Fraction that must be carried out on a single CPU <br/>
 $T$ = Time needed for the application to execute on a single CPU <br/>
@@ -187,9 +116,13 @@ Speed up S using N processes is given as a linear formula dependent  on the numb
 
 并无矛盾，讨论的场景不同
 
-| Amdahl       | Gustafson       |
-| ------------ | --------------- |
-| 强调优化串行部分的必要性 | 鼓励拓展问题实现更好的性能提升 |
+|      | Amdahl        | Gustafson          |
+| ---- | ------------- | ------------------ |
+| 核心假设 | 问题规模固定        | 总执行时间固定，但是问题规模可以拓展 |
+| 关注点  | 加速比受限于穿行部分的比例 | 加速比随着问题的规模的拓展而增长   |
+| 视角   | 悲观的，强调性能瓶颈    | 乐观，强调并行计算的潜力       |
+| 使用场景 | 固定大小问题的优化     | 可拓展问题的性能预测，比如科学计算  |
+
 ## Computer Architecture
 
 ### Flynn's Taxonomy
@@ -222,7 +155,6 @@ Speed up S using N processes is given as a linear formula dependent  on the numb
 	  定义多个线程并发执行代码的并行区域
 	- 工作共享结构 
 	  在线程之间划分工作的机制
-
 
 ### Message Passing Interface (MPI)
 
@@ -282,21 +214,28 @@ all_account_dict = comm.gather(account_dict, root=0)
 
 ![hardware](./images/hardware.png)
 
-Cache – much faster than reading/writing to main memory; instruction cache, data cache (multi-  
-level) and translation lookaside buffer used for virtual-physical address translation (more later on  
-Cloud and hypervisors).  
+#### Cache
+
+Cache – much faster than reading/writing to main memory; instruction cache, data cache (multi- level) and translation lookaside buffer used for virtual-physical address translation (more later on Cloud and hypervisors).  
 缓存 – 比==读/写主内存快得多==;指令缓存、数据缓存（多级别）和用于虚拟物理地址转换的转换后备缓冲区（稍后将详细介绍云和虚拟机管理程序）。 
 
-Parallelisation by adding extra CPU to allow more instructions to be processed per cycle. Usually  
-shares arithmetic units. Heavy use of one type of computation can tie up all the available units of  
-the CPU preventing other threads from using them.
-通过添加额外的 CPU 来允许每个周期处理更多指令的并行化。==通常分享算术单位==。大量使用一种类型的计算可能会占用所有可用的单位CPU ==阻止其他线程使用它们==。
+#### Hardware Threading
+
+Parallelisation by adding extra CPU to allow more instructions to be processed per cycle. Usually shares arithmetic units. Heavy use of one type of computation can tie up all the available units of  the CPU preventing other threads from using them.
+
+通过增加额外的CPU部件（如控制单元），==让一个CPU核心能同时处理更多指令==，但==计算单元是共享的==。 过度使用一种计算可能会“霸占”所有计算单元。
+
+#### Multi-Core
 
 Multiple cores that can process data and ( in principle!!!) perform computational tasks in parallel. Typically share same cache, but issue of cache read/write performance and cache coherence. Possibility of cache stalls (CPU not doing anything whilst waiting for caching); many chips have mixture (L1 cache on single cores; L2 cache on pairs of cores; L3 cache shared by all cores); typical to have different cache speeds and cache sizes (higher hit rates but potentially higher latency). 
- 可以处理数据和（原则上!!）并行执行计算任务的多个内核。==通常共享相同的缓存==，但存在缓存读/写性能和缓存一致性问题。缓存停顿的可能性（CPU 在等待缓存时不做任何事情）;许多芯片具有混合 （单核上的 L1 缓存;成对内核上的 L2 缓存;所有内核共享的 L3 缓存）;==通常具有不同的缓存速度和缓存大小==（命中率更高，但延迟可能更高）。 
+
+ 将==多个独立的CPU核心==集成在一块芯片上，可以==真正地并行执行计算任务==。 它们通常会共享部分缓存（如L3缓存），因此==带来了缓存一致性(cache coherence)的挑战==。
+
+#### Symmetric Multiprocessing - SMP
 
 Two (or more) identical processors connected to a single, shared main memory, with full access to all I/O devices, controlled by a single OS instance that treats all processors equally. Each processor executes different programs and works on different data but with capability of sharing common resources (memory, I/O device, ...). Processors can be connected in a variety of ways: buses, crossbar switches, meshes. More complex to program since need to program both for CPU and inter-processor communication (bus).
-两个（或多个）相同的处理器连接到一个共享的主内存，具有对所有 I/O 设备的完全访问权限，由一个平等对待所有处理器的作系统实例控制。每个处理器执行不同的程序并处理不同的数据，但具有==共享公共资源（内存、I/O 设备等）的能力==。处理器可以通过多种方式连接：总线、交叉开关、网格。编程更复杂，因为需要同时为 CPU 和处理器间通信（总线）编程。
+
+将==两个或多个相同的处理器==连接到==单一的共享主内存上==。 每个处理器可以运行不同的程序，处理不同的数据，但也能访问共同的资源。
 
 ### Operating System Parallelism Approaches
 
@@ -416,27 +355,8 @@ Two (or more) identical processors connected to a single, shared main memory, wi
 > 计算任务分解成各个阶段，依次执行
 > 可以接受持续数据据输入，系统功能性更强更复杂，阶段效率影响流水线效率
 
-## Exam questions
 
-
-> [!question|closed] Explain what is meant by the terms **Grid computing, Cluster Computing and Cloud Computing**
-> - Grid Computing: Distributed architecture where multiple independent, geographically separated computers work together to perform large-scale tasks by sharing resources over a network
-> - Cluster Computing: 往HPC上去靠 A collection of closely connected computers strapped together with a highspeed local network as a single system to provide high performance computing
-> - Cloud Computing: 往五个特点上去靠 Model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources
-
-> [!question|closed] Describe some of the current challenges with large-scale distributed systems
-> 开放性很强的问题，可以从任何角度来论证，需要注意不要罗列名词，要有对应解释
-> Heterogeneity: 异构型问题的挑战
-> Shared resource: 可以讨论资源异构问题 也可以从CAP理论讨论并发控制
-> Scalability: 结合异构型问题讨论 以及后面讲过的自动化部署 虚拟化概念
-> Big data challenge: 从4个V讨论数据处理需求
-
-> [!question|closed] Cloud computing solves some of these issues but not all. *Explain*
-> 哪些解决了哪些没有解决？最好举出例子
-> 可以从理论说 可以从实际说 还可以利用A1和A2里遇到的场景佐证 例如服务器的部署等等
-
-> [!question|closed] Describe some of the erroneous assumptions that are often made in designing large-scale distributed system
-> 根据前面分布式系统的挑战章节回答
+## Exam Questions
 
 > [!question|closed] Define Gustafson-Barsis’ law for scaled speed-up of parallel programs.
 > 直接给出每个变量的定义 并写出公式+一句话解释
