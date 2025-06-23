@@ -3,7 +3,7 @@
 
 | Week                            | Content                                          |
 | ------------------------------- | ------------------------------------------------ |
-| [week 1](../SWEN90016/week1.md) | Information Session & How we got here            |
+| [week 1](week%201.md)           | Information Session & How we got here            |
 | [week 2](week%202.md)           | Distributed and Parallel Systems                 |
 | [week 3](week%203.md)           | HPC & Spartan                                    |
 | [week 4](week%204.md)           | Cloud Computing, OpenStack & Introducting NeCTAR |
@@ -27,4 +27,3 @@
 | ---------------------------- | --------------- |
 | 40 multiple choice questions | 0.5 points each |
 | 3 short essay type questions | 10 points each  |
-Distributed and Parallel Computing Systems
