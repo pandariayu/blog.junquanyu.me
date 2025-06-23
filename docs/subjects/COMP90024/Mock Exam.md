@@ -131,7 +131,7 @@ B) Data deletion
 C) High availability  
 D) Auditing
 
-**18. What is the primary function of OpenStack Swift?*  
+**18. What is the primary function of OpenStack Swift?**
 
 A) Compute resource management  
 B) Object storage  
@@ -250,8 +250,7 @@ B) Compute resource management
 C) Volume management  
 D) Persistent storage
 
-**35. What is the main advantage of hardware-assisted virtualization?
-**
+**35. What is the main advantage of hardware-assisted virtualization?**
 
 A) Does not require hardware support  
 B) Improved performance and easier implementation  
@@ -265,8 +264,7 @@ B) Private cloud
 C) Hybrid cloud  
 D) Legacy cloud
 
-**37. What is the main function of OpenStack Neutron?
-**
+**37. What is the main function of OpenStack Neutron?**
 
 A) Compute management  
 B) Network management  
@@ -294,6 +292,3 @@ B) Automatic resource usage tracking and billing
 C) Unlimited free usage  
 D) User-managed encryption
 
----
-
-**End of Exam**

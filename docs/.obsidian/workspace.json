@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/Mock Exam.md",
+                "file": "subjects/COMP90024/week 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mock Exam"
+              "title": "week 5"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "subjects/COMP90024/week 10.md",
+                "file": "subjects/COMP90024/week 5.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "week 10 的大纲"
+              "title": "week 5 的大纲"
             }
           },
           {
@@ -175,12 +175,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 466.5,
-    "collapsed": true
+    "width": 466.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,12 +192,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2592b7efe6eb8644",
+  "active": "fc0ec23432a045b4",
   "lastOpenFiles": [
-    "subjects/COMP90024/week 9.md",
-    "subjects/COMP90024/Mock Exam.md",
-    "subjects/COMP90024/week 8.md",
     "subjects/COMP90024/week 6.md",
+    "subjects/COMP90024/Mock Exam.md",
+    "subjects/COMP90024/week 9.md",
+    "subjects/COMP90024/week 8.md",
     "subjects/COMP90024/week 5.md",
     "subjects/COMP90024/week 4.md",
     "subjects/COMP90024/week 7.md",

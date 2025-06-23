@@ -263,6 +263,77 @@ WSDL 提供了一种描述 Web 服务的标准方式，这使得 C++ 客户端�
 - **两者皆非:** 既不安全也不幂等的方法。
     - `POST` 两者皆非。调用 `POST /users` 两次会创建两个不同的用户 。
 
+## Workshop - Git
+
+**1. 版本控制系统（Version Control System, VCS）概念**
+
+- 版本控制又称为修订控制、源代码管理，是对文档、程序、网站等信息集合的变更管理。
+- 主要功能包括：跟踪文件变更、回退到某一历史版本、多人协作开发等
+    
+
+**2. 为什么要用版本控制？**
+
+- 记录和追踪每一次修改，方便回溯和恢复
+- 支持多人协作，减少协作冲突。
+- 能实验不同分支（如新功能、修复bug）而不影响主线
+    
+
+**3. 常见的版本控制系统**
+
+- 本地型：RCS
+- 集中式：CVS、Subversion（SVN）
+- 分布式：Git、Mercurial（Git 最流行)
+
+**4. Git 的基本概念**
+
+- **仓库（Repository）**：存储所有提交、分支、标签等的集合。
+- **提交（Commit）**：对仓库的某次更改快照。
+- **分支（Branch）**：独立的开发线。
+- **标签（Tag）**：标记某个重要提交点（如发布版本）。
+- **远程仓库（Remote repository）**：托管在服务器上的仓库（如GitHub、GitLab、Bitbucket）。
+- **克隆（Clone）**：从远程仓库复制一份到本地。
+- **拉取（Pull）**：获取远程更改并合并到本地。
+- **推送（Push）**：将本地更改上传到远程仓库。
+- **合并（Merge）**：将一个分支的更改合并到另一个分支。
+- **变基（Rebase）**：将一系列提交移动到另一分支的最新提交之后1[5](https://github.com/dlab-berkeley/git-fundamentals)[6](https://libguides.brooklyn.cuny.edu/cisc3130/git)。
+
+**5. Git 安装与常用命令**
+
+- 安装：macOS 用 Homebrew，Linux 用 apt，Windows 可用 Git 客户端或 WSL1[5](https://github.com/dlab-berkeley/git-fundamentals)。
+- 常用命令：
+    
+    - 初始化仓库：`git init`
+    - 克隆仓库：`git clone <repo_url>`
+    - 创建分支：`git checkout -b <branch_name>`
+    - 切换分支：`git checkout <branch_name>`
+    - 添加变更：`git add <filename>`
+    - 提交变更：`git commit -m "message"`
+    - 推送分支：`git push origin <branch_name>`
+    - 拉取更新：`git pull`
+    - 查看历史：`git log`
+    - 查看差异：`git diff`
+    - 合并分支：`git merge <branch_name>`
+    - 变基：`git rebase <branch_name>`
+
+**6. 分支命名规范**
+
+- 主分支：master/main
+- 开发分支：develop
+- 功能分支：feature/xxx
+- 修复分支：bugfix/xxx
+- 发布分支：release/xxx
+- 热修复分支：hotfix/xxx1。
+
+**7. Git 工作流**
+
+- 修改代码 → `git add`（暂存）→ `git commit`（提交）→ `git push`（推送到远程）1[6](https://libguides.brooklyn.cuny.edu/cisc3130/git)。
+- 通过 Pull Request（Merge Request）进行代码评审与合并1。
+- 解决合并冲突：冲突时需手动修改冲突部分，再 `git add`、`git commit` 完成合并1[5](https://github.com/dlab-berkeley/git-fundamentals)。
+
+**8. 个人访问令牌（Personal Access Token, PAT）**
+
+- 用于远程仓库（如GitLab、GitHub）的身份认证，特别是在启用双因素认证（2FA）时
+
 ## Exam Questions
 
 > [!question|closed] 在Kubernetes架构中，以下关于各项组件功能及相互关系的描述，正确的是()
