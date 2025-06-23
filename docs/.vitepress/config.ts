@@ -183,7 +183,11 @@ export default defineConfig({
                     collapsed: true,
                     link: '/subjects/COMP90024/week 10'
                 },
-                
+                {
+                    text: 'Mock Exam',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/Mock Exam'
+                }
             ],
             '/subjects/SWEN90016': [
                 {
