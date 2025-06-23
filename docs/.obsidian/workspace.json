@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "namespace",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -196,14 +197,14 @@
   "active": "2592b7efe6eb8644",
   "lastOpenFiles": [
     "subjects/COMP90024/week 5.md",
-    "subjects/COMP90024/week 6.md",
     "subjects/COMP90024/week 4.md",
+    "subjects/COMP90024/week 7.md",
+    "subjects/COMP90024/week 6.md",
+    "subjects/COMP90024/week 8.md",
     "subjects/COMP90024/week 3.md",
     "subjects/COMP90024/week 2.md",
     "subjects/COMP90024/index.md",
     "subjects/COMP90024/week 1.md",
-    "subjects/COMP90024/week 8.md",
-    "subjects/COMP90024/week 7.md",
     "subjects/COMP90024/week 9.md",
     "subjects/COMP90024/intro.md",
     "subjects/COMP90024/week 10.md",
