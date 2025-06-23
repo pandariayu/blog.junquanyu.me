@@ -8,6 +8,10 @@ import {
     NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 
+import {
+  NolebaseHighlightTargetedHeading,
+} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
+
 const { Layout } = DefaultTheme;
 const router = useRouter();
 
@@ -32,6 +36,9 @@ router.onAfterRouteChanged = setupMediumZoom;
     </template>
     <template #nav-screen-content-after>
       <NolebaseEnhancedReadabilitiesScreenMenu />
+    </template>
+    <template #layout-top>
+      <NolebaseHighlightTargetedHeading />
     </template>
   </Layout>
 </template>

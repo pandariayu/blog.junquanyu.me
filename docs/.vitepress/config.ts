@@ -4,16 +4,29 @@ import markdownit from 'markdown-it'
 import container from "markdown-it-container";
 import mark from "markdown-it-mark";
 import lightbox from "vitepress-plugin-lightbox"
-
-
+import {
+    InlineLinkPreviewElementTransform
+} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+import {
+    GitChangelog,
+    GitChangelogMarkdownSection,
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
 export default defineConfig({
-    lang: 'zh-CN',
+    lang: 'en-US',
     title: 'Blog',
     description: 'JY learning blog',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+    vue: {
+        template: {
+            transformAssetUrls: {
+                NolebaseUnlazyImg: ['src'],
+            },
+        },
+    },
     vite: {
         optimizeDeps: {
             exclude: [
+                '@nolebase/vitepress-plugin-inline-link-preview/client', 
                 '@nolebase/vitepress-plugin-enhanced-readabilities/client',
                 'vitepress',
                 '@nolebase/ui',
@@ -21,11 +34,22 @@ export default defineConfig({
         },
         ssr: {
             noExternal: [
-                // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可 //
+                '@nolebase/vitepress-plugin-inline-link-preview', 
+                '@nolebase/vitepress-plugin-highlight-targeted-heading', 
                 '@nolebase/vitepress-plugin-enhanced-readabilities',
                 '@nolebase/ui',
             ],
         },
+        plugins: [
+            GitChangelog({
+                repoURL: () => 'https://github.com/pandariayu/blog.junquanyu.me',
+            }),
+            GitChangelogMarkdownSection({
+                sections: {
+                    disableContributors: true,
+                },
+            }), 
+        ],
     }, 
     markdown: {
         config: (md:markdownit) => {
@@ -41,7 +65,8 @@ export default defineConfig({
             });
             md.use(callout);
             md.use(mark);
-            md.use(lightbox, {});
+            md.use(lightbox, {}); 
+            md.use(InlineLinkPreviewElementTransform)
         },
         math: true
     },

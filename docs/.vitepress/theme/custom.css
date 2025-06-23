@@ -1,6 +1,5 @@
 @import "./var.css";
 @import "./style/hidden.css";
-@import "./style/vp-code.css";
 @import "./style/home.css";
 
 mark {
@@ -15,4 +14,17 @@ mark {
 /* Dark mode styling for mark elements */
 html.dark mark {
   color: rgb(239, 243, 252);
+}
+
+/* HighlightTargetedHeading 主题色配置 */
+:root {
+  /* 使用主题色作为高亮背景色 */
+  --vp-nolebase-highlight-targeted-heading-color: var(--vp-c-text-1);
+  --vp-nolebase-highlight-targeted-heading-bg: rgba(85, 153, 201, 0.15); /* 主题色 #5599c9 的半透明版本 */
+}
+
+/* 深色模式下的配置 */
+html.dark {
+  --vp-nolebase-highlight-targeted-heading-color: var(--vp-c-text-1);
+  --vp-nolebase-highlight-targeted-heading-bg: rgba(85, 153, 201, 0.25); /* 深色模式下稍微增加不透明度 */
 }
