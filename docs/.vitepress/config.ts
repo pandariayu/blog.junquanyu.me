@@ -16,13 +16,6 @@ export default defineConfig({
     title: 'Blog',
     description: 'JY learning blog',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-    vue: {
-        template: {
-            transformAssetUrls: {
-                NolebaseUnlazyImg: ['src'],
-            },
-        },
-    },
     vite: {
         optimizeDeps: {
             exclude: [
