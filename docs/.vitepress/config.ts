@@ -187,6 +187,11 @@ export default defineConfig({
                     text: 'Mock Exam',
                     collapsed: true,
                     link: '/subjects/COMP90024/Mock Exam'
+                },
+                {
+                    text: 'Mock Exam 2',
+                    collapsed: true,
+                    link: '/subjects/COMP90024/Mock Exam 2'
                 }
             ],
             '/subjects/SWEN90016': [

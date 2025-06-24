@@ -105,6 +105,22 @@
     4. 多个Proposer可以同时向多个Acceptor提出提案
 - **权衡:** Paxos 集群可以在分区中幸存下来并保持一致性。 然而，分区的较小部分（不在法定数量内的节点）将不会响应客户端，从而降低了可用性。核心思想是利用约束条件（**少数服从多数**）的来保证分布式系统中的一致性
 
+- **Leader Election:** A single master node is elected by a quorum of master-eligible nodes. This master is responsible for managing the cluster state.  
+    **Leader Election（领导者选举）：** 单个 Master 节点由符合 master 条件的节点的仲裁选出。 该 master 负责管理集群状态。
+
+- **Log Replication:** The master node maintains a log of cluster state changes. These changes are replicated to the other master-eligible nodes to ensure consistency.  
+    **Log Replication：** 主节点维护集群状态更改的日志。 这些更改将复制到其他符合主节点条件的节点，以确保一致性。
+- **Quorum-Based Commits:** A change to the cluster state is only considered committed and applied after it has been acknowledged by a majority (a quorum) of the master-eligible nodes. This prevents "split-brain" scenarios where different parts of the cluster have conflicting states.  
+    **基于仲裁的提交：** 对集群状态的更改仅在获得大多数（仲裁）符合主节点条件的节点确认后，才会被视为已提交并应用。 这可以防止群集的不同部分具有冲突状态的“裂脑”情况。
+- **Safety and Liveness:** The design ensures that an elected master has all the committed changes from previous terms (preventing data loss) and that the cluster can continue to make progress as long as a majority of master-eligible nodes are available.  
+    **安全性和活跃性：** 该设计确保当选的主节点具有先前时期中提交的所有更改（防止数据丢失），并且只要大多数符合主节点条件的节点可用，集群就可以继续取得进展。
+
+
+> [!quote]
+> Minimum number of master nodes = (number of master-eligible nodes / 2) + 1
+
+假设我们有一个 20 nodes的cluster，并且我们分配了 8 个node作为符合 master 条件的节点（节点角色设置为 master）。通过应用此公式，我们的集群将创建一个 quorum，其中包含（精心选择的）5 个符合主节点条件的节点 （8 / 2 + 1 = 5）。我们的想法是，我们至少需要 5 个符合 master 条件的节点来形成 quorum。
+
 #### A&P Multi-Version Concurrency Control
 
 ![](images/Pasted%20image%2020250622112403.png)

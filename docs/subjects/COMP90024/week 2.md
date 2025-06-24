@@ -103,6 +103,8 @@ This means the maximum speedup is **20x**, no matter how many processors are use
 > [!info] 
 >可以通过增大问题规模和处理器个数，达到任意加速比
 
+$$T=N-N \times(1-\alpha)$$
+
 $\alpha$ = Fraction of program that can be done in parallel <br/>
 $1-\alpha$ = Fraction that must be carried out on a single CPU <br/>
 $T$ = Time needed for the application to execute on a single CPU <br/>
@@ -130,7 +132,8 @@ Speed up S using N processes is given as a linear formula dependent  on the numb
 |               | Single instruction                                                                                                                                         | Multiple instruction                                                                                                                       |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Single data   | 在指令或数据流中没有并行性的顺序计算机 <br>单个控制单元 （CU/CPU） 从内存中获取单个指令流。然后，CU/CPU 生成适当的控制信号，==以指示单个处理元件对单个数据流进行action==，即一次执行一个action。<br>**传统执行模式 效率不高**<br>**冯·诺依曼计算机的基本思想** | 并行计算架构，其中许多功能单元 （PU/CPU） 对==同一数据执行不同的action==<br>例如，在同一数据流上运行多个错误检查过程<br>**不常见, 容错系统中的数据处理和校验**                                            |
-| Multiple data | 1. 同时对多个数据点执行相同作的多个处理元素 <br>2. 重点是数据级并行性，即许多并行计算，但在给定时刻只有一个进程（指令） <br>3. 许多现代计算机使用 SIMD 指令，例如，提高多媒体使用的性能，例如用于图像处理<br>**较为常见 数据并行**<br>**适合图像和音频处理等**       | 1. 异步和独立运行的处理器数量 <br>2. 在任何时候，不同的处理器都可能对不同的数据片段执行不同的指令 <br>3. 计算机可以是共享内存或分布式内存类别 <br>4. 取决于 MIMD 处理器访问内存的方式<br>**超级计算机**<br>**大型复杂的分布式系统** |
+| Multiple data | 1. 同时对多个数据点执行相同action的多个处理元素 <br>2. 重点是数据级并行性，即许多并行计算，但在给定时刻只有一个进程（指令） <br>3. 许多现代计算机使用 SIMD 指令，例如，提高多媒体使用的性能，例如用于图像处理<br>**较为常见 数据并行**<br>**适合图像和音频处理等**  | 1. 异步和独立运行的处理器数量 <br>2. 在任何时候，不同的处理器都可能对不同的数据片段执行不同的指令 <br>3. 计算机可以是共享内存或分布式内存类别 <br>4. 取决于 MIMD 处理器访问内存的方式<br>**超级计算机**<br>**大型复杂的分布式系统** |
+
 ### Approaches for Parallelism
 
 **Where and how**

@@ -14,13 +14,12 @@
 | [week 9](week%209.md)       | Virtualisation & Amazon AWS vs MRC               |
 | [week 10](week%2010.md)     | Security & Clouds                                |
 
-
 ## Assignments
 
-| Assignment   | Percentage | Content |
-| ------------ | ---------- | ------- |
-| Assignment 1 | 10%        |         |
-| Assignment 2 | 40%        |         |
+| Assignment   | Percentage |
+| ------------ | ---------- |
+| Assignment 1 | 10%        |
+| Assignment 2 | 40%        |
 
 ## Final Exam
 

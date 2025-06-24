@@ -24,8 +24,8 @@
 
 ```sh
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH --nodes=2
+#SBATCH --ntasks=8
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=sapphire
 #SBATCH --time 0-12:00:00
