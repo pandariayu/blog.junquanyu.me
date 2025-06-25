@@ -249,6 +249,31 @@ export default defineConfig({
                     text: 'Week 10 Scrum at Scale',
                     collapsed: true,    
                     link: '/subjects/SWEN90016/week-10'
+                },
+                {
+                    text: 'Mock Exam',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/mock-exam'
+                },
+                {
+                    text: 'Review Part 1',    
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/review-part-1'
+                },
+                {
+                    text: 'Review Part 2',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/review-part-2'
+                },
+                {
+                    text: 'Review Part 3',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/review-part-3'
+                },
+                {
+                    text: 'Review Part 4',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/review-part-4'
                 }
             ],
             '/subjects/SWEN90009': [

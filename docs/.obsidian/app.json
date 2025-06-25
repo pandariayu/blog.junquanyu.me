@@ -4,6 +4,7 @@
   "attachmentFolderPath": "./images",
   "newLinkFormat": "relative",
   "pdfExportSettings": {
+    "includeName": true,
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
