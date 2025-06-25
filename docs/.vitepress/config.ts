@@ -12,7 +12,6 @@ import {
     GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 export default defineConfig({
-    ignoreDeadLinks: true,
     lang: 'en-US',
     title: 'Blog',
     description: 'JY learning blog',
@@ -76,7 +75,7 @@ export default defineConfig({
                     { text: 'COMP90024', link: '/subjects/COMP90024/index' },
                     { text: 'SWEN90016', link: '/subjects/SWEN90016/index' },
                     { text: 'SWEN90004', link: '/subjects/SWEN90004/index' },
-                    { text: 'SWEN90009', link: '/subjects/SWEN90009/Project Background' },
+                    { text: 'SWEN90009', link: '/subjects/SWEN90009/project-background' },
                 ],
             },
             {
@@ -137,62 +136,62 @@ export default defineConfig({
                 {
                     text: 'Week 1 Information Session & How we got here',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 1'
+                    link: '/subjects/COMP90024/week-1'
                 },
                 {
                     text: 'Week 2 Distributed and Parallel Computing Systems',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 2'
+                    link: '/subjects/COMP90024/week-2'
                 },
                 {
                     text: 'Week 3 HPC & Spartan',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 3'
+                    link: '/subjects/COMP90024/week-3'
                 },
                 {
                     text: 'Week 4 Cloud Computing, OpenStack & Introducing NeCTAR',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 4'
+                    link: '/subjects/COMP90024/week-4'
                 },
                 {
                     text: 'Week 5 Containerization and Docker & CI/CD',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 5'
+                    link: '/subjects/COMP90024/week-5'
                 },
                 {
                     text: 'Week 6 Kubernetes & ReST',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 6'
+                    link: '/subjects/COMP90024/week-6'
                 },
                 {
                     text: 'Week 7 Serverless(SaaS) and Fission',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 7'
+                    link: '/subjects/COMP90024/week-7'
                 },
                 {
                     text: 'Week 8 Big Data and ElasticSearch',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 8'
+                    link: '/subjects/COMP90024/week-8'
                 },
                 {
                     text: 'Week 9 Virtualisation & Amazon AWS vs MRC',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 9'
+                    link: '/subjects/COMP90024/week-9'
                 },
                 {
                     text: 'Week 10 Security and Clouds',
                     collapsed: true,
-                    link: '/subjects/COMP90024/week 10'
+                    link: '/subjects/COMP90024/week-10'
                 },
                 {
                     text: 'Mock Exam',
                     collapsed: true,
-                    link: '/subjects/COMP90024/Mock Exam'
+                    link: '/subjects/COMP90024/mock-exam'
                 },
                 {
                     text: 'Mock Exam 2',
                     collapsed: true,
-                    link: '/subjects/COMP90024/Mock Exam 2'
+                    link: '/subjects/COMP90024/mock-exam-2'
                 }
             ],
             '/subjects/SWEN90016': [
@@ -204,141 +203,141 @@ export default defineConfig({
                 {
                     text: 'Week 1 Projects',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week1'
+                    link: '/subjects/SWEN90016/week-1'
                 },
                 {
                     text: 'Week 2 Incremental SDLC',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week2'
+                    link: '/subjects/SWEN90016/week-2'
                 },
                 {
                     text: 'Week 3 Risk Management',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week3'
+                    link: '/subjects/SWEN90016/week-3'
                 },
                 {
                     text: 'Week 4 Stakeholder and Communication',
                     collapsed: true,    
-                    link: '/subjects/SWEN90016/week4'
+                    link: '/subjects/SWEN90016/week-4'
                 },
                 {
                     text: 'Week 5 Agile',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week5'   
+                    link: '/subjects/SWEN90016/week-5'   
                 },
                 {
                     text: 'Week 6 Software Quality Management',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week6'
+                    link: '/subjects/SWEN90016/week-6'
                 },  
                 {
                     text: 'Week 7 Formal Project Scheduling',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week7'
+                    link: '/subjects/SWEN90016/week-7'
                 },
                 {
                     text: 'Week 8 Project Tracking and Control',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week8'
+                    link: '/subjects/SWEN90016/week-8'
                 },
                 {
                     text: 'Week 9 Ethics in Professional Practice',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week9'
+                    link: '/subjects/SWEN90016/week-9'
                 },
                 {
                     text: 'Week 10 Scrum at Scale',
                     collapsed: true,    
-                    link: '/subjects/SWEN90016/week10'
+                    link: '/subjects/SWEN90016/week-10'
                 }
             ],
             '/subjects/SWEN90009': [
                 {
                     text: 'Project Background',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Project Background'
+                    link: '/subjects/SWEN90009/project-background'
                 },
                 {
                     text: 'Requirements Elicitation',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Requirement Elicitation'
+                    link: '/subjects/SWEN90009/requirement-elicitation'
                 },
                 {
                     text: 'Early Solution Brainstorming',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Early Solution Brainstorming'
+                    link: '/subjects/SWEN90009/early-solution-brainstorming'
                 },
                 {
                     text: 'Personas',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Personas'
+                    link: '/subjects/SWEN90009/personas'
                 },
                 {
                     text: 'User Stories',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/User Stories'
+                    link: '/subjects/SWEN90009/user-stories'
                 },
                 {
                     text: 'Acceptance Criteria',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Acceptance Criteria'
+                    link: '/subjects/SWEN90009/acceptance-criteria'
                 },
                 {
                     text: 'Usability Testing',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Usability Testing'
+                    link: '/subjects/SWEN90009/usability-testing'
                 },
                 {
                     text: 'Agile Ceremonies',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Agile Ceremonies'
+                    link: '/subjects/SWEN90009/agile-ceremonies'
                 },
                 {
                     text: 'Interview Preparation',
                     collapsed: true,
-                    link: '/subjects/SWEN90009/Interview Preparation'
+                    link: '/subjects/SWEN90009/interview-preparation'
                 }
             ],
             '/subjects/SWEN90004': [
                 {
                     text: 'Introduction',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/intro'
+                    link: '/subjects/SWEN90004/'
                 },
                 {
                     text: 'Java',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Java'
+                    link: '/subjects/SWEN90004/java'
                 },
                 {
                     text: 'Finite State Process',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/FSP'
+                    link: '/subjects/SWEN90004/fsp'
                 },
                 {
                     text: 'Complex System', 
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Complex System'
+                    link: '/subjects/SWEN90004/complex-system'
                 },
                 {
                     text: 'Cellar Automata',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Cellar Automata'
+                    link: '/subjects/SWEN90004/cellar-automata'
                 },
                 {
                     text: 'Agent-based Modelling',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Agents based Model'
+                    link: '/subjects/SWEN90004/agents-based-model'
                 },
                 {
                     text: 'Petri Nets',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Petri Nets'
+                    link: '/subjects/SWEN90004/petri-nets'
                 },  
                 {
                     text: 'Practice exam part 2',
                     collapsed: true,
-                    link: '/subjects/SWEN90004/Practice exam part 2'
+                    link: '/subjects/SWEN90004/practice-exam-part-2'
                 },
             ]
         }
