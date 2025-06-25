@@ -1,6 +1,7 @@
 # Projects
 
 ## Importance of "Process"
+
 - Process 
     - Systematic series of actions or steps taken to achieve a specific
 goal. It involves planning, executing, monitoring, and controlling all aspects
@@ -10,6 +11,7 @@ of a project.
 includes the software system and associated artefacts.
 
 ### Emphasized process
+
 - Foundation for Success – A robust process critical for delivering
 successful projects
 - Industry Relevance – Professionals rely and value sound processes in

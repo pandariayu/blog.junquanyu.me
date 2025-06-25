@@ -1,4 +1,4 @@
-## Project Tracking and Control
+# Project Tracking and Control
 - simple methods to track    
     - Periodic meetings where team members report progress.
     - Evaluating the results of reviews and audits conducted as part of the software engineering process.
