@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/COMP90024/Mock Exam 2.md",
+                "file": "subjects/SWEN90016/week1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mock Exam 2"
+              "title": "week1"
+            }
+          },
+          {
+            "id": "2eade69f02caabdf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "subjects/SWEN90016/week10.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week10"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "beat",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -155,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "subjects/COMP90024/Mock Exam 2.md",
+                "file": "subjects/SWEN90016/week5.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Mock Exam 2 的大纲"
+              "title": "week5 的大纲"
             }
           },
           {
@@ -175,11 +189,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 466.5
+    "width": 466.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,45 +207,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2592b7efe6eb8644",
+  "active": "2eade69f02caabdf",
   "lastOpenFiles": [
-    "subjects/COMP90024/Mock Exam.md",
-    "subjects/COMP90024/Mock Exam 2.md",
-    "subjects/COMP90024/week 10.md",
-    "subjects/COMP90024/week 2.md",
-    "subjects/COMP90024/week 3.md",
-    "subjects/COMP90024/week 4.md",
-    "subjects/COMP90024/week 8.md",
-    "subjects/COMP90024/week 6.md",
-    "subjects/COMP90024/week 7.md",
-    "subjects/COMP90024/week 9.md",
-    "subjects/COMP90024/week 5.md",
-    "subjects/COMP90024/index.md",
-    "subjects/COMP90024/week 1.md",
-    "subjects/intro.md",
-    "subjects/COMP90024/intro.md",
-    "().md",
-    "week%203.md",
-    "week%202.md",
-    "week2.md",
-    "week1-2.md",
+    "subjects/SWEN90016/week9.md",
+    "subjects/SWEN90016/week8.md",
+    "subjects/SWEN90016/week7.md",
+    "subjects/SWEN90016/week6.md",
+    "subjects/SWEN90016/week5.md",
+    "subjects/SWEN90016/week4.md",
+    "subjects/SWEN90016/week3.md",
+    "subjects/SWEN90016/week2.md",
     "subjects/SWEN90016/week1.md",
-    "subjects/COMP90024/images/Pasted image 20250622173024.png",
-    "subjects/COMP90024/images/Pasted image 20250622173015.png",
-    "subjects/COMP90024/images/Pasted image 20250622152656.png",
-    "subjects/COMP90024/images/Pasted image 20250622140045.png",
-    "subjects/COMP90024/images/Pasted image 20250622140029.png",
-    "subjects/COMP90024/images/Pasted image 20250622124905.png",
-    "subjects/COMP90024/images/Pasted image 20250622124735.png",
+    "subjects/SWEN90016/index.md",
+    "subjects/SWEN90016/week10.md",
+    "subjects/SWEN90016/images/ia_retro.png",
+    "subjects/SWEN90016/images/ia.png",
+    "subjects/SWEN90016/images/essential_safe.png",
+    "subjects/SWEN90016/images/configuration_audting.png",
+    "subjects/SWEN90016/images/change_control_process_1.png",
+    "subjects/SWEN90016/images/change_control_process.png",
+    "subjects/SWEN90016/images/configuration_item.png",
+    "subjects/SWEN90016/images/acs_2.png",
+    "subjects/SWEN90016/images/acs_1.png",
+    "subjects/SWEN90016/images/eva_train.png",
+    "subjects/COMP90024/Mock Exam.md",
+    "subjects/COMP90024/week 1.md",
+    "subjects/COMP90024/index.md",
+    "subjects/SWEN90016/intro.md",
+    "subjects/SWEN90016/main.md",
+    "subjects/SWEN90016/week11.md",
+    "README.md",
+    "subjects/intro.md",
+    "subjects/SWEN90016/images",
+    "subjects/COMP90024/week 8.md",
+    "subjects/COMP90024/week 2.md",
+    "subjects/COMP90024/Mock Exam 2.md",
+    "subjects/COMP90024/week 9.md",
+    "subjects/COMP90024/week 10.md",
+    "subjects/COMP90024/week 5.md",
     "subjects/COMP90024/未命名",
-    "subjects/COMP90024/images/Pasted image 20250622112403.png",
-    "subjects/COMP90024/images/Pasted image 20250622112316.png",
-    "subjects/COMP90024/images/Pasted image 20250622112249.png",
-    "test-mcq.md",
-    "subjects/SWEN90009/Agile Ceremonies.md",
-    "subjects/SWEN90009/Acceptance Criteria.md",
-    "subjects/SWEN90009/Project Background.md",
-    "subjects/SWEN90009/Early Solution Brainstorming.md",
     "subjects/SWEN90009/Acceptiance",
     "subjects/SWEN90009/Interview Preparatino",
     "subjects/SWEN90009",
@@ -238,7 +253,6 @@
     "programming/python",
     "programming/vue",
     "programming/react",
-    "projects/mutc-website",
-    "about"
+    "projects/mutc-website"
   ]
 }

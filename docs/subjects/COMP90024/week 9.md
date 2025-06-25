@@ -52,6 +52,7 @@
 
 > [!info]
 > 这些是低级系统调用，且指令集因架构类型（如 ARM vs. RISC）而异
+
 ### Origin - Principles
 
 > [!info] Thoerem

@@ -88,7 +88,7 @@ Docker has different networking options:
 - **none**: no network, completely isolated. i.e. No access from outside, no access to the outside. 无网络，完全隔离。即不能从外部出来，不能从外部进入。
 - **overlay**: used in Docker SWARM for multi-host communications.  在 Docker SWARM 中用于多主机通信。
 - **macvlan**: containers gets its own IP on the physical network (like a real machine)
-  containers 在物理网络上获取自己的 IP（就像一台真正的机器一样）。
+  containers 在物理网络上获取自己的 IP（就像一台真正的机器）。
 ### Security & Dockers Hardening
 
 - Use official or trusted images  

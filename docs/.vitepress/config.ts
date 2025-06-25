@@ -198,12 +198,57 @@ export default defineConfig({
                 {
                     text: 'Introduction',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/intro'
+                    link: '/subjects/SWEN90016/'
                 },
                 {
-                    text: 'Week 1',
+                    text: 'Week 1 Projects',
                     collapsed: true,
                     link: '/subjects/SWEN90016/week1'
+                },
+                {
+                    text: 'Week 2 Incremental SDLC',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week2'
+                },
+                {
+                    text: 'Week 3 Risk Management',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week3'
+                },
+                {
+                    text: 'Week 4 Stakeholder and Communication',
+                    collapsed: true,    
+                    link: '/subjects/SWEN90016/week4'
+                },
+                {
+                    text: 'Week 5 Agile',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week5'   
+                },
+                {
+                    text: 'Week 6 Software Quality Management',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week6'
+                },  
+                {
+                    text: 'Week 7 Formal Project Scheduling',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week7'
+                },
+                {
+                    text: 'Week 8 Project Tracking and Control',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week8'
+                },
+                {
+                    text: 'Week 9 Ethics in Professional Practice',
+                    collapsed: true,
+                    link: '/subjects/SWEN90016/week9'
+                },
+                {
+                    text: 'Week 10 Scrum at Scale',
+                    collapsed: true,    
+                    link: '/subjects/SWEN90016/week10'
                 }
             ],
             '/subjects/SWEN90009': [
