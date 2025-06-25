@@ -15,7 +15,7 @@
     - Gantt charts -> bar chart shows schedule against against calendat
     ![alt text](./images/gantt_chart.png)
     - PERT(Program evaluation and review techinique charts) chart -> an activity network shows dependency and critical path
-    ![alt text](pert_chart.png)
+    ![alt text](./images/pert_chart.png)
 
 ### Develop Project Schedule
 1. Breakdown the task into small chunks you can deal with     - **Work Breakdown Structure (WBS)**.

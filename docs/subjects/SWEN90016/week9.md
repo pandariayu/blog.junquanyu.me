@@ -165,7 +165,7 @@ of the configuration throughout the system lifecycle.
 - The dependencies between them
 
 ## Core Activity
-![alt text](configuration_management.png)
+![alt text](./images/configuration_management.png)
 
 ### Identification Types of Configuration item
 - There are three different types
