@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/SWEN90016/week10.md",
+                "file": "subjects/SWEN90016/week5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week10"
+              "title": "week5"
             }
           }
         ],
@@ -209,13 +209,16 @@
   },
   "active": "2eade69f02caabdf",
   "lastOpenFiles": [
+    "subjects/SWEN90004/index.md",
+    "subjects/SWEN90016/images/epic.png",
+    "subjects/SWEN90016/week6.md",
+    "subjects/SWEN90016/images/cost_quality_management.png",
+    "subjects/SWEN90016/week10.md",
     "subjects/SWEN90016/week9.md",
     "subjects/SWEN90016/images/configuration_management.png",
     "subjects/SWEN90016/images/configuration_item 1.png",
     "subjects/SWEN90016/week8.md",
     "subjects/SWEN90016/week7.md",
-    "subjects/SWEN90016/week10.md",
-    "subjects/SWEN90016/week6.md",
     "subjects/SWEN90016/week5.md",
     "subjects/SWEN90016/week4.md",
     "subjects/SWEN90016/week3.md",
@@ -228,8 +231,6 @@
     "subjects/SWEN90016/images/configuration_audting.png",
     "subjects/SWEN90016/images/change_control_process_1.png",
     "subjects/SWEN90016/images/change_control_process.png",
-    "subjects/SWEN90016/images/configuration_item.png",
-    "subjects/SWEN90016/images/acs_2.png",
     "subjects/COMP90024/Mock Exam.md",
     "subjects/COMP90024/week 1.md",
     "subjects/COMP90024/index.md",

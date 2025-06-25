@@ -26,7 +26,7 @@
     - Trade off when implementing Quality Management between Conformance and NonConformance. 
     - Balancing **cost** of implementing software quality processes to follow (conformance), and **risk** of having to fix problems if they are identified further into the project (nonconformance).
         - The total cost of getting the software right is higher the later into the project issues are detected
-![alt text](cost_quality_management.png)
+![alt text](./images/cost_quality_management.png)
 - Cost is **High**
     - cost can be extremely harm:
         - Bug in missle launch system kills thousands

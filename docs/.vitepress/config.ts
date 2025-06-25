@@ -73,8 +73,8 @@ export default defineConfig({
                 text: 'Unimelb Subjects',
                 items: [
                     { text: 'COMP90024', link: '/subjects/COMP90024/index' },
-                    { text: 'SWEN90016', link: '/subjects/SWEN90016/intro' },
-                    { text: 'SWEN90004', link: '/subjects/SWEN90004/intro' },
+                    { text: 'SWEN90016', link: '/subjects/SWEN90016/index' },
+                    { text: 'SWEN90004', link: '/subjects/SWEN90004/index' },
                     { text: 'SWEN90009', link: '/subjects/SWEN90009/Project Background' },
                 ],
             },

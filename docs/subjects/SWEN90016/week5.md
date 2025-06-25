@@ -62,7 +62,8 @@ Preparation: Product Backlog Refinement/Grooming     - review for relevance, com
     - each test should be able to be traced back to corresponding requirements
 
 ### Getting requirements 
-    - In Waterfall models, requirements are elicited once, at the start of the project, usually by a team of business analysts.
+
+- In Waterfall models, requirements are elicited once, at the start of the project, usually by a team of business analysts.
     - Agile processes place more emphasis on a continuing relationship with the client or their representative, but there still needs to be a requirements brainstorming session during project inception
 - Requirements in traditional system
     - Traditional models: text-based
@@ -146,7 +147,7 @@ A large user story is typically referred to as an epic
 There is no “magic size” at which we start calling a user story an epic
 Generally: an epic is a user story that will take more than one or two sprints to develop and test
 Epics are split into smaller user stories, so that a story can be completed within a sprint.
-![alt text](epic.png)
+![alt text](./images/epic.png)
 
 ### Conditions of Satisfaction
 - a high-level acceptance test (acceptance criteria) that will be true after the user story is complete
