@@ -12,6 +12,7 @@ import {
     GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 export default defineConfig({
+    ignoreDeadLinks: true,
     lang: 'en-US',
     title: 'Blog',
     description: 'JY learning blog',

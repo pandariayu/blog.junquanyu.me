@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/SWEN90016/week5.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week5"
+              "title": "index"
             }
           }
         ],
@@ -209,6 +209,13 @@
   },
   "active": "2eade69f02caabdf",
   "lastOpenFiles": [
+    "subjects/COMP90024/index.md",
+    "subjects/COMP90024/week 4.md",
+    "subjects/SWEN90016/index.md",
+    "subjects/COMP90024/week 2.md",
+    "subjects/COMP90024/Mock Exam.md",
+    "subjects/COMP90024/week 1.md",
+    "subjects/SWEN90016/week5.md",
     "subjects/SWEN90004/index.md",
     "subjects/SWEN90016/images/epic.png",
     "subjects/SWEN90016/week6.md",
@@ -219,21 +226,16 @@
     "subjects/SWEN90016/images/configuration_item 1.png",
     "subjects/SWEN90016/week8.md",
     "subjects/SWEN90016/week7.md",
-    "subjects/SWEN90016/week5.md",
     "subjects/SWEN90016/week4.md",
     "subjects/SWEN90016/week3.md",
     "subjects/SWEN90016/week2.md",
     "subjects/SWEN90016/week1.md",
-    "subjects/SWEN90016/index.md",
     "subjects/SWEN90016/images/ia_retro.png",
     "subjects/SWEN90016/images/ia.png",
     "subjects/SWEN90016/images/essential_safe.png",
     "subjects/SWEN90016/images/configuration_audting.png",
     "subjects/SWEN90016/images/change_control_process_1.png",
     "subjects/SWEN90016/images/change_control_process.png",
-    "subjects/COMP90024/Mock Exam.md",
-    "subjects/COMP90024/week 1.md",
-    "subjects/COMP90024/index.md",
     "subjects/SWEN90016/intro.md",
     "subjects/SWEN90016/main.md",
     "subjects/SWEN90016/week11.md",
@@ -241,11 +243,9 @@
     "subjects/intro.md",
     "subjects/SWEN90016/images",
     "subjects/COMP90024/week 8.md",
-    "subjects/COMP90024/week 2.md",
     "subjects/COMP90024/Mock Exam 2.md",
     "subjects/COMP90024/week 9.md",
     "subjects/COMP90024/week 10.md",
-    "subjects/COMP90024/week 5.md",
     "subjects/COMP90024/未命名",
     "subjects/SWEN90009/Acceptiance",
     "subjects/SWEN90009/Interview Preparatino",
