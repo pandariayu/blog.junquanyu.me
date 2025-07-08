@@ -3,13 +3,15 @@ import {
   toArray,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-3GYA4YLH.js";
+} from "./chunk-BUEX4SKW.js";
 import {
   computed,
+  init_vue_runtime_esm_bundler,
   shallowRef,
   toValue,
   watch
-} from "./chunk-DDXJJ377.js";
+} from "./chunk-LGUILKYI.js";
+import "./chunk-4CV4JOE5.js";
 
 // node_modules/tabbable/dist/index.esm.js
 var candidateSelectors = ["input:not([inert])", "select:not([inert])", "textarea:not([inert])", "a[href]:not([inert])", "button:not([inert])", "[tabindex]:not(slot):not([inert])", "audio[controls]:not([inert])", "video[controls]:not([inert])", '[contenteditable]:not([contenteditable="false"]):not([inert])', "details>summary:first-of-type:not([inert])", "details:not([inert])"];
@@ -1066,6 +1068,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
 };
 
 // node_modules/@vueuse/integrations/useFocusTrap.mjs
+init_vue_runtime_esm_bundler();
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;

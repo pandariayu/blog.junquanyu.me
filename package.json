@@ -29,6 +29,7 @@
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^4.0.0",
     "markdown-it-mark": "^4.0.0",
+    "markdown-it-multiple-choice": "^1.1.2",
     "vitepress-plugin-callout": "^0.0.1"
   }
 }

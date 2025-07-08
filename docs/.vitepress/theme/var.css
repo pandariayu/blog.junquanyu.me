@@ -2,7 +2,14 @@
     --vp-c-brand-1: #5599c9;
     --vp-c-brand-2: #5599c9;
     --vp-c-brand-3: #5599c9;
-    --vp-c-brand-soft: #5599c9;
+    --vp-c-green: #008000;
+    --vp-c-red: #ff0000;
+    --vp-c-green-soft: #0080001a;
+    --vp-c-red-soft: #ff00001a;
+    --vp-c-brand: #5599c9;
+    --vp-c-brand-soft: #5599c91a;
+    --vp-c-brand-dark: #3389c7;
+    --vp-c-bg-alt: #f0f0f0;
 }
 
 :root {

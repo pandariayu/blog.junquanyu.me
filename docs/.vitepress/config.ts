@@ -3,7 +3,8 @@ import callout from 'vitepress-plugin-callout'
 import markdownit from 'markdown-it'
 import container from "markdown-it-container";
 import mark from "markdown-it-mark";
-import lightbox from "vitepress-plugin-lightbox"
+import lightbox from "vitepress-plugin-lightbox";
+import multipleChoicePlugin from 'markdown-it-multiple-choice';
 import {
     InlineLinkPreviewElementTransform
 } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
@@ -11,6 +12,8 @@ import {
     GitChangelog,
     GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
+
+
 export default defineConfig({
     lang: 'en-US',
     title: 'Blog',
@@ -31,6 +34,7 @@ export default defineConfig({
                 '@nolebase/vitepress-plugin-highlight-targeted-heading', 
                 '@nolebase/vitepress-plugin-enhanced-readabilities',
                 '@nolebase/ui',
+                'markdown-it-multiple-choice',
             ],
         },
         plugins: [
@@ -59,7 +63,8 @@ export default defineConfig({
             md.use(callout);
             md.use(mark);
             md.use(lightbox, {}); 
-            md.use(InlineLinkPreviewElementTransform)
+            md.use(InlineLinkPreviewElementTransform);
+            md.use(multipleChoicePlugin)
         },
         math: true
     },
@@ -187,11 +192,6 @@ export default defineConfig({
                     text: 'Mock Exam',
                     collapsed: true,
                     link: '/subjects/COMP90024/mock-exam'
-                },
-                {
-                    text: 'Mock Exam 2',
-                    collapsed: true,
-                    link: '/subjects/COMP90024/mock-exam-2'
                 }
             ],
             '/subjects/SWEN90016': [
