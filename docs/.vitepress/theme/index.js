@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
-
+import 'markdown-it-multiple-choice/style.css'
 import Layout from "./layout.vue";
 import './style/enhanced-mark.css';
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
