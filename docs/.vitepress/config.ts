@@ -369,6 +369,11 @@ export default defineConfig({
             ],
             '/subjects/SWEN90006': [
                 {
+                    text: 'Introduction',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/'
+                },
+                {
                     text: 'Introduction to Software Testing',
                     collapsed: true,
                     link: '/subjects/SWEN90006/week-1'
