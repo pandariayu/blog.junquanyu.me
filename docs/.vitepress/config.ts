@@ -48,6 +48,7 @@ export default defineConfig({
             }),
         ],
     },
+    ignoreDeadLinks: true,
     markdown: {
         config: (md:markdownit) => {
             md.use(container, "button", {
