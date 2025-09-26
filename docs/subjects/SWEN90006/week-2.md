@@ -1,3 +1,4 @@
+# Week 2: Input Partitioning & Boundary Value Analysis
 ## The Challenge: Selecting Test Cases
 
 The central problem in testing is that you can't test everything. The set of all possible inputs a program can accept is called the **Input Domain**.

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/SWEN90006/week-2.md",
+                "file": "subjects/SWEN90006/week-3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week-2"
+              "title": "week-3"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "subjects/SWEN90006/week-2.md",
+                "file": "subjects/SWEN90006/week-3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "week-2 的反向链接列表"
+              "title": "week-3 的反向链接列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "subjects/SWEN90006/week-2.md",
+                "file": "subjects/SWEN90006/week-3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "week-2 的大纲"
+              "title": "week-3 的大纲"
             }
           },
           {
@@ -180,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 351.5
+    "width": 430.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,23 +194,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2592b7efe6eb8644",
+  "active": "59df1066692f0182",
   "lastOpenFiles": [
+    "subjects/SWEN90006/images/Pasted image 20250926145153.png",
+    "subjects/SWEN90006/images/Pasted image 20250926144847.png",
+    "subjects/SWEN90006/week-2.md",
+    "subjects/SWEN90006/week-1.md",
+    "subjects/SWEN90006/week-3.md",
     "subjects/SWEN90006/images/Pasted image 20250926142056.png",
     "subjects/SWEN90006/images/Pasted image 20250926141941.png",
     "subjects/SWEN90004/agents-based-model.md",
-    "subjects/SWEN90006/week-2.md",
     "subjects/SWEN90006/index.md~",
     "subjects/SWEN90006/week-9.md",
     "subjects/SWEN90006/index.md",
-    "subjects/SWEN90006/week-1.md",
     "subjects/SWEN90006/images/Pasted image 20250926131910.png",
     "subjects/SWEN90006/week-8.md",
     "subjects/SWEN90006/week-7.md",
     "subjects/SWEN90006/week-6.md",
     "subjects/SWEN90006/week-5.md",
     "subjects/SWEN90006/week-4.md",
-    "subjects/SWEN90006/week-3.md",
     "subjects/SWEN90006/images/Pasted image 20250906214706.png",
     "subjects/SWEN90006/images",
     "subjects/SWEN90016/review-part-1.md",
@@ -233,8 +235,6 @@
     "subjects/SWEN90016/images/cost_quality_management.png",
     "subjects/SWEN90016/images/configuration_management.png",
     "subjects/SWEN90016/images/configuration_item 1.png",
-    "subjects/SWEN90016/images/ia_retro.png",
-    "subjects/SWEN90016/images/ia.png",
     "subjects/SWEN90016/images",
     "subjects/COMP90024/未命名",
     "subjects/SWEN90009/Acceptiance",

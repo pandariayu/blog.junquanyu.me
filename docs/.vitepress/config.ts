@@ -13,7 +13,6 @@ import {
     GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-
 export default defineConfig({
     lang: 'en-US',
     title: 'Blog',

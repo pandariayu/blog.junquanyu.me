@@ -26,6 +26,7 @@
     "vitepress-plugin-lightbox": "^1.0.2"
   },
   "dependencies": {
+    "@nolebase/vitepress-plugin-breadcrumbs": "^2.18.2",
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^4.0.0",
     "markdown-it-mark": "^4.0.0",

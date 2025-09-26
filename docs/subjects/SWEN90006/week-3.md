@@ -1,134 +1,95 @@
-### **边界值分析 (Boundary-Value Analysis, BVA)**
+# Week 3: Boundary-value analysis, control and data-flow testing
+## Why Boundary-Value Analysis (BVA)?
 
-#### **1. 为什么需要 BVA？**
+**Equivalence Partitioning (EP)**, a technique to divide a program's vast input domain into manageable chunks called **Equivalence Classes (ECs)**. We assume any single test from an EC is as good as any other for finding a bug.
+**等效分区 （EP）**，一种将程序的庞大输入域划分为可管理块的技术，称为**等价类 （EC）**。我们假设来自 EC 的任何单个测试都与任何其他测试一样好，可以发现错误。
 
-BVA 是对输入分区技术的一种重要补充和优化 。实践经验表明，大量的程序错误（如“差一错误” Off-by-one error）往往发生在输入域的“边界”或“边缘”上，而不是在等价类的中间 。BVA 通过系统地关注这些边界来设计测试用例，从而更有效地发现缺陷 。
+However, experience shows that not all inputs are created equal. Bugs, especially "off-by-one" errors, tend to cluster at the **edges** or **boundaries** between these equivalence classes.
+然而，经验表明，并非所有输入都是一样的。错误，尤其是“off-by-one”错误，往往聚集在这些等价类之间的 **边缘** 或 **边界** 处。
 
-#### **2. 识别边界：开边界与闭边界**
+**BVA is a technique that refines EP by focusing test cases specifically on these boundaries.** It's designed to catch two common types of faults that occur at the edges:
 
-- **闭边界 (Closed Boundary)**：边界上的点属于该区域。通常由包含等号的运算符定义，如`<=`, `>=`, `=` 。
-- **开边界 (Open Boundary)**：边界上的点不属于该区域。通常由不包含等号的不等式运算符定义，如`<`, `>` 。
+1. **Domain-shift faults:** The boundary is in the wrong place (e.g., the code uses `<` when it should have used `<=`).边界位于错误的位置（例如，代码本应使用“<=”而使用“<”）。
+2. **Computational faults:** The boundary is correct, but the calculation performed on one side is wrong. 边界是正确的，但在一侧执行的计算是错误的。
 
-#### **3. 核心概念：On-Point 和 Off-Point**
+---
 
-- **On-Point (在点上)**：指正好位于等价类边界上的一个点 。
-- **Off-Point (离点)**：指紧邻边界的、刚刚越过边界的点 。
+### Open vs. Closed Boundaries
 
-**示例**：
+To apply BVA, you first need to identify the type of boundary you're dealing with:
 
-- 对于范围
-    `$x <= 5$` (闭边界) ：
+- **Closed Boundary:** The boundary point itself is included in the domain. This is created by operators like
+    `=`, `>=`, and `<=`.
+- **Open Boundary:** The boundary point is _not_ included in the domain. This is created by strict inequality operators like
+    `>` and `<`.
+
+### On-Points and Off-Points
+
+Once you've identified a boundary, you select specific test values:
+
+- **On-Point:** A value that lies _exactly on_ the boundary. This is your most powerful test for finding boundary errors.
+- **Off-Point:** A value _immediately adjacent_ to the boundary, on either side.
+
+For example, for the condition `x <= 5`:
+
+- The boundary is at `x=5`. It's a **closed** boundary.
+- The **on-point** is `5`.
+- The **off-points** are `4` and `6`.
+
+![](images/Pasted%20image%2020250926144847.png)
+
+### BVA for Multi-Dimensional Boundaries
+
+Things get more interesting when boundaries depend on multiple variables, like `x >= y`. This creates a 2D boundary (a line). A simple "boundary shift" could be the line moving, but it could also **pivot**. 当边界依赖于多个变量（例如“x >= y”）时，事情会变得更加有趣。这将创建 2D 边界（一条线）。一个简单的“边界移动”可能是线移动，但它也可能是**枢轴**。
+
+A single on-point test like `(0,0)` might not detect this pivot. To handle this, a rule of thumb has been developed: 像“（0,0）”这样的单个点检验可能无法检测到此枢轴。为了解决这个问题，已经制定了一个经验法则：
+
+- **For an n-dimensional boundary, you should select _n_ on-points and 1 off-point. 对于 n 维边界，应选择 _n_ 个点和 1 个离点。**
+
+So, for a 2D boundary (`x >= y`), you would choose:
+
+1. **Two on-points** that are far apart from each other (e.g., `(0,0)` and `(10,10)`). This "anchors" the line and prevents it from pivoting undetected. 彼此相距较远（例如，'（0,0）' 和 '（10,10）'）。这会“锚定”线并防止它在未被发现的情况下旋转。
+2. **One off-point** as close as possible to the boundary (e.g., `(0,1)`).
+   **一个尽可能靠近边界的偏点**（例如，'（0,1）'）。
+
+---
+
+## White-Box Testing & Control-Flow Analysis
+
+So far, we've focused on **black-box testing**, where test cases are designed based only on the specification, without looking at the source code.
+到目前为止，我们专注于**黑盒测试**，其中测试用例仅基于规范进行设计，而不查看源代码。
+
+Now, we shift to **white-box testing**, where we use the source code itself to design our tests. The most common form of white-box testing is based on **Control-Flow Analysis**.
+现在，我们转向**白盒测试**，我们使用源代码本身来设计我们的测试。最常见的白盒测试形式是基于 **控制流分析**。
+
+### Control-Flow Graphs (CFGs)
+
+A **Control-Flow Graph (CFG)** is a visual representation of a program's logic.
+**控制流图 （CFG）** 是程序逻辑的可视化表示。
+
+- **Nodes (Vertices)** represent the program's statements.
+- **Edges** represent the flow of control between statements. Edges coming from a decision (like an
+    `if` statement) are typically labeled `True` or `False`.
+
+CFGs are useful because they provide a language-independent abstraction of the code, helping us make better testing decisions.
+![](images/Pasted%20image%2020250926145153.png)
+### Code Coverage Criteria
+
+Once we have a CFG, we can define "coverage criteria" to measure how thoroughly our tests are exercising the code. The goal is to create a set of test cases that meets a certain level of coverage.一旦我们有了 CFG，我们就可以定义“覆盖率标准”来衡量我们的测试执行代码的彻底程度。目标是创建一组满足一定覆盖率的测试用例。
+
+Here are the key criteria, from weakest to strongest:
+
+1. **Statement (Node) Coverage**: Requires that every statement (node) in the program is executed at least once by your test suite.要求程序中的每个语句（节点）至少由测试套件执行一次。
+2. **Branch (Decision) Coverage**: Requires that every possible branch from each decision point is taken at least once. This means for every `if` statement, you need a test that makes it `true` and another that makes it `false`.要求每个决策点的每个可能分支至少执行一次。这意味着对于每个“if”语句，您需要一个测试来使其“true”，另一个测试使其“false”。
     
-    - On-point 是
-        `$x=5$` 。
+    - **Branch coverage is stronger than statement coverage.** You can execute every statement without necessarily testing every branch (e.g., if there's an `if` statement with no `else` block). 您可以执行每个语句，而不必测试每个分支（例如，如果有一个没有“else”块的“if”语句）。
         
-    - 紧邻的 Off-point 是
-        `$x=6$`（在边界外）。
-        
-- 对于范围
-    `$x < 5$` (开边界) ：
-    
-    - On-point 仍然是
-        `$x=5$` 。
-        
-    - 紧邻的 Off-point 是
-        `$x=4$`（在边界内）。
-
-#### **4. BVA 指导方针**
-
-讲座提供了一套选择 On-point 和 Off-point 的启发式准则 ：
-
-![](images/Pasted%20image%2020250906214706.png)
-
-#### **5. BVA 应用于多维边界**
-
-当程序的输入涉及多个变量时，边界会变成线、面或超平面。
-
-- **二维边界**：例如，一个边界由 `$x >= y$` 定义。此时，测试不仅要考虑边界本身（`$x = y$`, on-point），还要考虑边界可能发生的偏移（shift）或旋转（pivot） 。
-    
-    - **挑战**：仅选择一个 on-point（如 `(0,0)`）和一个 off-point（如 `(0,1)`）可能无法检测到边界的旋转 。
-    - **经验法则**：为了有效地“固定”住二维边界，应选择**两个相距较远的 on-points** 和一个**紧邻边界的 off-point** 。
-    
-- **N维边界**：这个规律可以推广到更高维度。对于一个 N 维的输入空间，通常需要选择 **N 个 on-points** 来“锚定”边界，并选择 **1 个 off-point** 来检测偏移 。
-
-#### **6. BVA 实例：`binarySearch`**
-
-对于
-
-`binarySearch` 函数，我们可以对输入 `list` 的长度和 `target` 的值进行 BVA 。
-
-- **对 `list` 长度的 BVA**：
-    
-    - 等价类为：`len(list) = 0`, `len(list) = 1`, `len(list) > 1`。
-        
-    - 边界点是 0 和 1。
-        
-    - 应用BVA后，需要测试的列表长度为：
-        
-        **0 (on-point), 1 (on/off-point), 2 (off-point)** 。
-        
-- **对 `target` 值的 BVA**：
-    
-    - 有效范围是 `1 <= target <= 100`。
-        
-    - 边界点是 1 和 100。
-        
-    - 应用BVA后，需要测试的
-        
-        `target` 值为：**0 (off-point), 1 (on-point), 100 (on-point), 101 (off-point)** 。
-
-### **第三部分：控制流分析与覆盖率**
-
-当我们可以查看源代码时，就可以采用
-
-**白盒测试**技术 。控制流分析是最常见的白盒测试形式 。
-
-#### **1. 控制流图 (Control-Flow Graph, CFG)**
-
-- **定义**：CFG 是一种图形化表示，它展示了程序执行过程中所有可能的路径 。
-    
-    - **节点 (Nodes/Vertices)**：代表程序语句或语句块 。
-        
-    - **边 (Edges)**：代表节点之间的控制流 。对于条件语句（如
-        
-        `if`、`while`），边会被标记为 `True` 或 `False` 。
-        
-- **优点**：CFG 是一种独立于具体编程语言的抽象模型，有助于我们系统地分析程序的逻辑和分支 。
+3. **Condition Coverage**: Requires that each individual boolean sub-condition in a decision is evaluated to be `true` at least once and `false` at least once. For `if (x && y)`, you'd need tests where `x` is true, `x` is false, `y` is true, and `y` is false.
+    要求决策中的每个单独的布尔子条件至少被评估为“true”一次，至少被评估为“false”一次。对于 'if （x & y）'，您需要测试 'x' 为 true，'x' 为 false，'y' 为 true，'y' 为 false。
+4. **Multiple-Condition Coverage**: The strongest criterion. It requires that you test _every possible combination_ of outcomes for the conditions within a decision. For `if (x && y)`, you would need to test all four combinations: (T,T), (T,F), (F,T), and (F,F).
+   最强的标准。它要求您测试决策中条件_every可能的结果combination_。对于“if （x & y）”，您需要测试所有四种组合：（T，T）、（T，F）、（F，T） 和 （F，F）。
     
 
-#### **2. 覆盖率标准 (Coverage Criteria)**
+A **coverage score** is calculated as a percentage: `(Objectives met / Total Objectives)`. Tools like **LCOV** can automatically measure this for you and generate reports showing exactly which lines and branches your tests have covered.
 
-覆盖率是衡量测试用例对源代码测试得有多彻底的度量。
-
-- **语句/节点覆盖 (Statement/Node Coverage)**：
-    
-    - **目标**：确保程序中的**每一个语句（或CFG中的每个节点）** 都至少被执行一次 。
-        
-    - **`binarySearch` 示例**：通过两个测试用例 `List = [], target = 4` 和 `List = [1,4,5,7,9], target = 4` 即可达到100%的语句覆盖 。
-        
-- **分支/决策/边覆盖 (Branch/Decision/Arc Coverage)**：
-    
-    - **目标**：确保程序中**每个决策点的所有可能分支（或CFG中的每条边）** 都至少被执行一次 。
-        
-    - **强度比较**：**分支覆盖比语句覆盖更强** 。因为满足分支覆盖必然会执行所有语句，但反之则不然（例如，一个没有
-        
-        `else` 的 `if` 语句，只测试 `true` 的情况也能覆盖所有语句，但没有覆盖 `false` 分支） 。
-        
-
-#### **3. 分支覆盖的变体**
-
-对于复杂的条件判断（如 `if (x && y)`），分支覆盖还可以进一步细化：
-
-- **条件覆盖 (Condition Coverage)**：
-    
-    - **目标**：确保每个**独立的子条件**都至少取过一次 `true` 和 `false` 。它不关心整个决策的最终结果 。
-        
-- **决策/条件覆盖 (Decision/Condition Coverage)**：
-    
-    - **目标**：**同时满足**条件覆盖和分支覆盖 。即每个子条件都取过
-        
-        `true`/`false`，并且整个决策的最终结果也取过 `true`/`false` 。
-        
-- **多重条件覆盖 (Multiple-Condition Coverage)**：
-    
-    - **目标**：覆盖决策中所有子条件的**所有可能组合** 。这是最强的覆盖标准，但可能需要大量的测试用例。
+**覆盖率分数**以百分比计算：“（达到的目标/总目标）”。**LCOV** 等工具可以自动为您测量这一点并生成报告，准确显示您的测试涵盖了哪些行和分支。
