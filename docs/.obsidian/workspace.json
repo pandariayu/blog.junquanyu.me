@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "subjects/SWEN90006/index.md",
+                "file": "subjects/SWEN90006/week-8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "week-8"
             }
           }
         ],
@@ -196,8 +196,8 @@
   },
   "active": "2592b7efe6eb8644",
   "lastOpenFiles": [
-    "subjects/intro.md",
     "subjects/SWEN90006/index.md",
+    "subjects/intro.md",
     "subjects/SWEN90006/week-8.md",
     "subjects/SWEN90006/images/Pasted image 20250927003025.png",
     "subjects/SWEN90006/images/Pasted image 20250927002841.png",
