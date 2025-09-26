@@ -123,6 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "subjects/SWEN90006/week-2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "week-2 的反向链接列表"
             }
           },
           {
@@ -188,8 +189,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -208,10 +208,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "36893c8f61bbf00a",
+  "active": "e2e552564bebb3e1",
   "lastOpenFiles": [
-    "subjects/SWEN90006/week-9.md",
     "subjects/SWEN90006/index.md~",
+    "subjects/SWEN90006/week-9.md",
     "subjects/SWEN90006/index.md",
     "subjects/SWEN90006/week-1.md",
     "subjects/SWEN90006/images/Pasted image 20250926131910.png",
@@ -240,7 +240,6 @@
     "subjects/SWEN90009/personas.md",
     "subjects/SWEN90004/java.md",
     "subjects/SWEN90004/memorize.md",
-    "subjects/SWEN90016/week-10.md",
     "subjects/SWEN90016/images/system_demonstration.png",
     "subjects/SWEN90016/images/epic.png",
     "subjects/SWEN90016/images/cost_quality_management.png",
