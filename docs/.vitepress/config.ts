@@ -22,7 +22,7 @@ export default defineConfig({
     vite: {
         optimizeDeps: {
             exclude: [
-                '@nolebase/vitepress-plugin-inline-link-preview/client', 
+                '@nolebase/vitepress-plugin-inline-link-preview/client',
                 '@nolebase/vitepress-plugin-enhanced-readabilities/client',
                 'vitepress',
                 '@nolebase/ui',
@@ -30,8 +30,8 @@ export default defineConfig({
         },
         ssr: {
             noExternal: [
-                '@nolebase/vitepress-plugin-inline-link-preview', 
-                '@nolebase/vitepress-plugin-highlight-targeted-heading', 
+                '@nolebase/vitepress-plugin-inline-link-preview',
+                '@nolebase/vitepress-plugin-highlight-targeted-heading',
                 '@nolebase/vitepress-plugin-enhanced-readabilities',
                 '@nolebase/ui',
                 'markdown-it-multiple-choice',
@@ -45,9 +45,9 @@ export default defineConfig({
                 sections: {
                     disableContributors: true,
                 },
-            }), 
+            }),
         ],
-    }, 
+    },
     markdown: {
         config: (md:markdownit) => {
             md.use(container, "button", {
@@ -62,7 +62,7 @@ export default defineConfig({
             });
             md.use(callout);
             md.use(mark);
-            md.use(lightbox, {}); 
+            md.use(lightbox, {});
             md.use(InlineLinkPreviewElementTransform);
             md.use(multipleChoicePlugin)
         },
@@ -81,6 +81,7 @@ export default defineConfig({
                     { text: 'SWEN90016', link: '/subjects/SWEN90016/index' },
                     { text: 'SWEN90004', link: '/subjects/SWEN90004/index' },
                     { text: 'SWEN90009', link: '/subjects/SWEN90009/project-background' },
+                    { text: 'SWEN90006', link: '/subjects/SWEN90006/index' },
                 ],
             },
             {
@@ -217,19 +218,19 @@ export default defineConfig({
                 },
                 {
                     text: 'Week 4 Stakeholder and Communication',
-                    collapsed: true,    
+                    collapsed: true,
                     link: '/subjects/SWEN90016/week-4'
                 },
                 {
                     text: 'Week 5 Agile',
                     collapsed: true,
-                    link: '/subjects/SWEN90016/week-5'   
+                    link: '/subjects/SWEN90016/week-5'
                 },
                 {
                     text: 'Week 6 Software Quality Management',
                     collapsed: true,
                     link: '/subjects/SWEN90016/week-6'
-                },  
+                },
                 {
                     text: 'Week 7 Formal Project Scheduling',
                     collapsed: true,
@@ -247,7 +248,7 @@ export default defineConfig({
                 },
                 {
                     text: 'Week 10 Scrum at Scale',
-                    collapsed: true,    
+                    collapsed: true,
                     link: '/subjects/SWEN90016/week-10'
                 },
                 {
@@ -256,7 +257,7 @@ export default defineConfig({
                     link: '/subjects/SWEN90016/mock-exam'
                 },
                 {
-                    text: 'Review Part 1',    
+                    text: 'Review Part 1',
                     collapsed: true,
                     link: '/subjects/SWEN90016/review-part-1'
                 },
@@ -340,7 +341,7 @@ export default defineConfig({
                     link: '/subjects/SWEN90004/fsp'
                 },
                 {
-                    text: 'Complex System', 
+                    text: 'Complex System',
                     collapsed: true,
                     link: '/subjects/SWEN90004/complex-system'
                 },
@@ -358,11 +359,58 @@ export default defineConfig({
                     text: 'Petri Nets',
                     collapsed: true,
                     link: '/subjects/SWEN90004/petri-nets'
-                },  
+                },
                 {
                     text: 'Practice exam part 2',
                     collapsed: true,
                     link: '/subjects/SWEN90004/practice-exam-part-2'
+                },
+            ],
+            '/subjects/SWEN90006': [
+                {
+                    text: 'Introduction to Software Testing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-1'
+                },
+                {
+                    text: 'Input Partitioning & Boundary Value Analysis',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-2'
+                },
+                {
+                    text: 'Boundary-Value Analysis and Control-Flow Analysis',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-3'
+                },
+                {
+                    text: 'Mutation analysis and static data-flow analysis',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-4'
+                },
+                {
+                    text: 'Module and object-oriented testing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-5'
+                },
+                {
+                    text: 'Test oracles; and testing & integration',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-6'
+                },
+                {
+                    text: 'Introduction to Security Testing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-7'
+                },
+                {
+                    text: 'Mutation-based and Generation-based black-box fuzzing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-8'
+                },
+                {
+                    text: 'Code coverage-guided greybox fuzzing',
+                    collapsed: true,
+                    link: '/subjects/SWEN90006/week-9'
                 },
             ]
         }
